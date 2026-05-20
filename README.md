@@ -33,7 +33,7 @@ The implementation builds on OpenEvolve. The original OpenEvolve README is avail
 ## Repository Layout
 
 - [openevolve/](openevolve/) contains the underlying evolutionary program-search framework.
-- [multi_task_shared_then_adapt/configs/](multi_task_shared_then_adapt/configs/) contains EMO-STA benchmark-family manifests.
+- [multi_task_shared_then_adapt/configs/](multi_task_shared_then_adapt/configs/) contains EMO-STA benchmark-family configuration files.
 - [multi_task_shared_then_adapt/scripts/](multi_task_shared_then_adapt/scripts/) contains launchers, repeated-trial runners, reporting utilities, and post-hoc evaluation scripts.
 - [multi_task_shared_then_adapt/plotting/](multi_task_shared_then_adapt/plotting/) contains scripts for generating paper tables, budget plots, trajectory plots, and OOD figures.
 - [multi_task_shared_then_adapt/docs/](multi_task_shared_then_adapt/docs/) contains result summaries, appendix-ready tables, plot captions, and detailed workflow notes.
@@ -58,7 +58,7 @@ EMO-STA uses the same model configuration style as OpenEvolve. You can configure
 
 Main-paper budgets are reported as `Shared / Per-task Adapt / Total` iterations. `Total` is the matched family-level compute, computed as `Shared + task_count * Adapt`. The main tables report five Claude-family models: Haiku-4.5, Sonnet-4.5, Sonnet-4.6, Opus-4.5, and Opus-4.6.
 
-| Family | Manifest | Tasks | Main budget |
+| Family | Benchmark config | Tasks | Main budget |
 | --- | --- | --- | --- |
 | Function minimization | `multi_task_shared_then_adapt/configs/function_minimization_emo_sta.yaml` | `fm_sincosxy_2d`, `fm_ackley_2d`, `fm_rastrigin_2d`, `fm_rosenbrock_2d` | `40 / 15 / 100` |
 | Circle packing | `multi_task_shared_then_adapt/configs/circle_packing_emo_sta.yaml` | `cp_n20`, `cp_n22`, `cp_n24`, `cp_n26` | `60 / 15 / 120` |
@@ -71,11 +71,11 @@ Main-paper budgets are reported as `Shared / Per-task Adapt / Total` iterations.
 
 ## Running EMO-STA
 
-Choose a benchmark from [multi_task_shared_then_adapt/configs/](multi_task_shared_then_adapt/configs/). For example, the command below launches repeated trials for circle packing with matched family-level compute: `60 + 4 x 15 = 30 x 4 = 120` total iterations per trial. It enables all three STA adaptation variants evaluated in the paper:
+Choose a benchmark configuration from [multi_task_shared_then_adapt/configs/](multi_task_shared_then_adapt/configs/). For example, the command below launches repeated trials for circle packing with matched family-level compute: `60 + 4 x 15 = 30 x 4 = 120` total iterations per trial. It enables all three STA adaptation variants evaluated in the paper:
 
 ```bash
 python multi_task_shared_then_adapt/scripts/run_multi_task_shared_then_adapt_trials.py \
-  --manifest multi_task_shared_then_adapt/configs/circle_packing_emo_sta.yaml \
+  --benchmark-config multi_task_shared_then_adapt/configs/circle_packing_emo_sta.yaml \
   --trials 5 \
   --shared-iterations 60 \
   --adaptation-iterations 15 \
@@ -91,7 +91,7 @@ For a single end-to-end run without repeated trials:
 
 ```bash
 python multi_task_shared_then_adapt/scripts/run_multi_task_shared_then_adapt.py \
-  --manifest multi_task_shared_then_adapt/configs/circle_packing_emo_sta.yaml \
+  --benchmark-config multi_task_shared_then_adapt/configs/circle_packing_emo_sta.yaml \
   --shared-iterations 60 \
   --adaptation-iterations 15 \
   --baseline-iterations 30 \

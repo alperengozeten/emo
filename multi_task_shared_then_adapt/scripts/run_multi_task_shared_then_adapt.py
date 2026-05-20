@@ -96,9 +96,11 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--manifest",
+        "--benchmark-config",
+        dest="manifest",
         default=DEFAULT_MANIFEST,
         help=(
-            "Path to the EMO-STA manifest. "
+            "Path to the EMO-STA benchmark configuration file. "
             f"Default: {DEFAULT_MANIFEST}. "
             f"Unit-square circle packing: {CIRCLE_PACKING_MANIFEST}. "
             f"Rectangle circle packing: {CIRCLE_PACKING_RECTANGLE_MANIFEST}. "
