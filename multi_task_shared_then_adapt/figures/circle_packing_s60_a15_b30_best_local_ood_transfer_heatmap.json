@@ -1,0 +1,99 @@
+{
+  "cells": {
+    "cp_n21": {
+      "cp_n20": {
+        "error_count": 0,
+        "mean": 0.9472217927390076,
+        "n": 25,
+        "std": 0.045729590873374776
+      },
+      "cp_n22": {
+        "error_count": 0,
+        "mean": 0.9312829688600077,
+        "n": 25,
+        "std": 0.06806310436606376
+      },
+      "cp_n24": {
+        "error_count": 0,
+        "mean": 0.9361014035041616,
+        "n": 25,
+        "std": 0.06348057227735181
+      },
+      "cp_n26": {
+        "error_count": 0,
+        "mean": 0.9394561910708293,
+        "n": 25,
+        "std": 0.07400501013721532
+      }
+    },
+    "cp_n23": {
+      "cp_n20": {
+        "error_count": 0,
+        "mean": 0.9286616638207184,
+        "n": 25,
+        "std": 0.12076090552114901
+      },
+      "cp_n22": {
+        "error_count": 0,
+        "mean": 0.9577172150654909,
+        "n": 25,
+        "std": 0.038118825837426006
+      },
+      "cp_n24": {
+        "error_count": 0,
+        "mean": 0.9525132667669374,
+        "n": 25,
+        "std": 0.04582747365084168
+      },
+      "cp_n26": {
+        "error_count": 0,
+        "mean": 0.9134484289759839,
+        "n": 25,
+        "std": 0.13688832334050974
+      }
+    },
+    "cp_n25": {
+      "cp_n20": {
+        "error_count": 0,
+        "mean": 0.9445719192053345,
+        "n": 25,
+        "std": 0.040846518551279715
+      },
+      "cp_n22": {
+        "error_count": 1,
+        "mean": 0.9117179448692372,
+        "n": 25,
+        "std": 0.19566228783770837
+      },
+      "cp_n24": {
+        "error_count": 0,
+        "mean": 0.937286474121212,
+        "n": 25,
+        "std": 0.06679726003544828
+      },
+      "cp_n26": {
+        "error_count": 0,
+        "mean": 0.9485717018813064,
+        "n": 25,
+        "std": 0.05618177079609409
+      }
+    }
+  },
+  "family": "circle_packing",
+  "holdout_task_ids": [
+    "cp_n21",
+    "cp_n23",
+    "cp_n25"
+  ],
+  "method": "STA Best-Local",
+  "output_stem": "/home/alperen/llm-opt/openevolve/multi_task_shared_then_adapt/figures/circle_packing_s60_a15_b30_best_local_ood_transfer_heatmap",
+  "results_dir": "/nfs/turbo/coe-sodalab/alperen/llm-opt/openevolve/multi_task_shared_then_adapt/results/circle_packing",
+  "setting_prefix": "s60-a15-b30",
+  "skipped_runs": [],
+  "source_task_ids": [
+    "cp_n20",
+    "cp_n22",
+    "cp_n24",
+    "cp_n26"
+  ]
+}

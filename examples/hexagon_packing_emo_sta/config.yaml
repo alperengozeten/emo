@@ -1,0 +1,106 @@
+# Hexagon packing EMO-STA configuration for OpenEvolve
+
+max_iterations: 15
+checkpoint_interval: 15
+log_level: "INFO"
+random_seed: 123
+language: "python"
+file_suffix: ".py"
+
+diff_based_evolution: false
+max_code_length: 32000
+
+llm:
+  api_base: "http://127.0.0.1:4000"
+  api_key: "litellm"
+  primary_model: "claude-sonnet-4-6"
+  primary_model_weight: 1.0
+  secondary_model: null
+  secondary_model_weight: 0.0
+  temperature: 0.7
+  max_tokens: 8192
+  timeout: 180
+  retries: 3
+
+prompt:
+  system_message: |
+    You are an expert mathematician specializing in geometric packing and computational geometry.
+
+    Your task is to improve a generic constructor/optimizer for packing n disjoint unit regular hexagons inside a larger regular hexagon, minimizing the side length of the outer hexagon.
+
+    The evolving code must preserve these exact function signatures:
+
+    def construct_hexagon_packing(n: int):
+        ...
+        return inner_hex_data, outer_hex_data, outer_hex_side_length
+
+    def run_hexagon_packing(n: int):
+        return construct_hexagon_packing(n)
+
+    In this family:
+    - each inner hexagon is a regular hexagon with side length 1.0
+    - each row of inner_hex_data is (center_x, center_y, angle_degrees)
+    - outer_hex_data is (outer_center_x, outer_center_y, outer_angle_degrees)
+    - outer_hex_side_length is the side length of the enclosing regular hexagon
+    - the evaluator will call your code for multiple related tasks with:
+      n in {10, 11, 12, 13}
+
+    Pinned public scoring anchors for outer side length:
+    - n=10: 3.7320508075688772
+    - n=11: 3.9245008972987525
+    - n=12: 3.94164
+    - n=13: 4.0
+
+    Constraints:
+    - inner_hex_data must have shape (n, 3)
+    - outer_hex_data must have shape (3,)
+    - all values must be finite
+    - outer_hex_side_length must be positive and finite
+    - all unit hexagons must lie fully inside the outer hexagon
+    - inner hexagons must not overlap in positive area
+    - boundary contact is allowed
+    - keep the algorithm deterministic
+
+    Guidance:
+    - Favor reusable geometric construction and optimization routines parameterized by n
+    - Avoid implementing four completely separate hardcoded exact configurations as the main strategy
+    - Hexagonal lattice constructions, boundary-aware placement, symmetry breaking, rotations, local continuous optimization, and perturbation/repair are all reasonable
+    - Rotation can matter, especially for nontrivial n
+    - Good initial layouts matter
+    - Focus on valid packings first, then reduce the outer side length
+    - The score is target_outer_side_length / achieved_outer_side_length for valid packings, so smaller outer side length is better
+
+    Do not use plotting code inside the evolved block.
+    Do not print debugging output from the evolved block.
+    Write all improvements only between # EVOLVE-BLOCK-START and # EVOLVE-BLOCK-END.
+
+  num_top_programs: 3
+  num_diverse_programs: 2
+  use_template_stochasticity: true
+  include_artifacts: true
+  max_artifact_bytes: 20480
+
+database:
+  population_size: 80
+  archive_size: 40
+  num_islands: 4
+  elite_selection_ratio: 0.1
+  exploration_ratio: 0.3
+  exploitation_ratio: 0.6
+  feature_dimensions: ["center_spread", "angle_spread"]
+  feature_bins: 10
+  migration_interval: 15
+  migration_rate: 0.15
+
+evaluator:
+  timeout: 600
+  max_retries: 2
+  cascade_evaluation: true
+  cascade_thresholds: [0.4, 0.75]
+  parallel_evaluations: 2
+  use_llm_feedback: false
+  enable_artifacts: true
+
+early_stopping_patience: 100
+convergence_threshold: 0.001
+early_stopping_metric: "combined_score"

@@ -1,0 +1,11 @@
+## Previous Attempts
+
+{previous_attempts}
+
+## Top Performing Programs
+
+{top_programs}
+
+{inspirations_section}
+
+{foreign_inspirations_section}

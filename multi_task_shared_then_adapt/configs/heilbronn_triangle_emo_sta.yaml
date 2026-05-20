@@ -1,0 +1,16 @@
+family: heilbronn_triangle
+initial_program: ../../examples/heilbronn_triangle_emo_sta/initial_program.py
+evaluation_file: ../../examples/heilbronn_triangle_emo_sta/evaluator.py
+base_config: ../../examples/heilbronn_triangle_emo_sta/config.yaml
+output_root: ../results/heilbronn_triangle
+manifest_label: heilbronn_triangle
+default_shared_iterations: 15
+default_adaptation_iterations: 12
+default_baseline_iterations: 15
+wandb:
+  enabled: true
+  project: openevolve-emo-sta
+  single_run: true
+  log_best_program_artifact: true
+  log_checkpoint_artifact: false
+  log_code: false

@@ -1,0 +1,16 @@
+family: signal_processing
+initial_program: ../../examples/signal_processing_emo_sta/initial_program.py
+evaluation_file: ../../examples/signal_processing_emo_sta/evaluator.py
+base_config: ../../examples/signal_processing_emo_sta/config.yaml
+output_root: ../results/signal_processing
+manifest_label: signal_processing
+default_shared_iterations: 20
+default_adaptation_iterations: 20
+default_baseline_iterations: 25
+wandb:
+  enabled: true
+  project: openevolve-emo-sta
+  single_run: true
+  log_best_program_artifact: true
+  log_checkpoint_artifact: false
+  log_code: false

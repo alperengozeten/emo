@@ -1,0 +1,5 @@
+## Related Task Inspirations
+
+Use these as inspiration only. Optimize the current task's objective and preserve its API and outputs.
+
+{foreign_inspiration_sources}

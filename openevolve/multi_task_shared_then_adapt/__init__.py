@@ -1,0 +1,111 @@
+"""Utilities for the multi-task shared-then-adapt workflow."""
+
+from openevolve.multi_task_shared_then_adapt.circle_packing import (
+    CIRCLE_PACKING_SHARED_SELECTOR,
+    CIRCLE_PACKING_TASK_SELECTOR_ENV_VAR,
+    CIRCLE_PACKING_TASK_SPECS,
+    CIRCLE_PACKING_TASKS_BY_ID,
+    CirclePackingTaskSpec,
+)
+from openevolve.multi_task_shared_then_adapt.circle_packing_rectangle import (
+    CIRCLE_PACKING_RECTANGLE_SHARED_SELECTOR,
+    CIRCLE_PACKING_RECTANGLE_TASK_SELECTOR_ENV_VAR,
+    CIRCLE_PACKING_RECTANGLE_TASK_SPECS,
+    CIRCLE_PACKING_RECTANGLE_TASKS_BY_ID,
+    CirclePackingRectangleTaskSpec,
+)
+from openevolve.multi_task_shared_then_adapt.function_minimization import (
+    FUNCTION_MINIMIZATION_SHARED_SELECTOR,
+    FUNCTION_MINIMIZATION_TASK_SELECTOR_ENV_VAR,
+    FUNCTION_MINIMIZATION_TASK_SPECS,
+    FUNCTION_MINIMIZATION_TASKS_BY_ID,
+    FunctionMinimizationTaskSpec,
+)
+from openevolve.multi_task_shared_then_adapt.heilbronn_triangle import (
+    HEILBRONN_TRIANGLE_SHARED_SELECTOR,
+    HEILBRONN_TRIANGLE_TASK_SELECTOR_ENV_VAR,
+    HEILBRONN_TRIANGLE_TASK_SPECS,
+    HEILBRONN_TRIANGLE_TASKS_BY_ID,
+    HeilbronnTriangleTaskSpec,
+)
+from openevolve.multi_task_shared_then_adapt.k_module_problem_balanced import (
+    K_MODULE_BALANCED_SHARED_SELECTOR,
+    K_MODULE_BALANCED_TASK_SELECTOR_ENV_VAR,
+    K_MODULE_BALANCED_TASK_SPECS,
+    K_MODULE_BALANCED_TASKS_BY_ID,
+    KModuleBalancedTaskSpec,
+)
+from openevolve.multi_task_shared_then_adapt.registry import (
+    FAMILY_REGISTRY,
+    get_family_definition,
+)
+from openevolve.multi_task_shared_then_adapt.sldbench_3d import (
+    CANONICAL_FEATURE_NAMES,
+    SLDBENCH_3D_SHARED_SELECTOR,
+    SLDBENCH_3D_TASK_SELECTOR_ENV_VAR,
+    SLDBENCH_3D_TASK_SPECS,
+    SLDBENCH_3D_TASKS_BY_ID,
+    SLDBENCH_DATASET_REPO_ID,
+    SLDBench3DTaskSpec,
+)
+from openevolve.multi_task_shared_then_adapt.rust_adaptive_sort import (
+    RUST_ADAPTIVE_SORT_SHARED_SELECTOR,
+    RUST_ADAPTIVE_SORT_TASK_SELECTOR_ENV_VAR,
+    RUST_ADAPTIVE_SORT_TASK_SPECS,
+    RUST_ADAPTIVE_SORT_TASKS_BY_ID,
+    RustAdaptiveSortTaskSpec,
+)
+from openevolve.multi_task_shared_then_adapt.signal_processing import (
+    SIGNAL_PROCESSING_SHARED_SELECTOR,
+    SIGNAL_PROCESSING_TASK_SELECTOR_ENV_VAR,
+    SIGNAL_PROCESSING_TASK_SPECS,
+    SIGNAL_PROCESSING_TASKS_BY_ID,
+    SignalProcessingTaskSpec,
+)
+
+__all__ = [
+    "FAMILY_REGISTRY",
+    "CIRCLE_PACKING_SHARED_SELECTOR",
+    "CIRCLE_PACKING_TASK_SELECTOR_ENV_VAR",
+    "CIRCLE_PACKING_TASK_SPECS",
+    "CIRCLE_PACKING_TASKS_BY_ID",
+    "CirclePackingTaskSpec",
+    "CIRCLE_PACKING_RECTANGLE_SHARED_SELECTOR",
+    "CIRCLE_PACKING_RECTANGLE_TASK_SELECTOR_ENV_VAR",
+    "CIRCLE_PACKING_RECTANGLE_TASK_SPECS",
+    "CIRCLE_PACKING_RECTANGLE_TASKS_BY_ID",
+    "CirclePackingRectangleTaskSpec",
+    "FUNCTION_MINIMIZATION_SHARED_SELECTOR",
+    "FUNCTION_MINIMIZATION_TASK_SELECTOR_ENV_VAR",
+    "FUNCTION_MINIMIZATION_TASK_SPECS",
+    "FUNCTION_MINIMIZATION_TASKS_BY_ID",
+    "FunctionMinimizationTaskSpec",
+    "HEILBRONN_TRIANGLE_SHARED_SELECTOR",
+    "HEILBRONN_TRIANGLE_TASK_SELECTOR_ENV_VAR",
+    "HEILBRONN_TRIANGLE_TASK_SPECS",
+    "HEILBRONN_TRIANGLE_TASKS_BY_ID",
+    "HeilbronnTriangleTaskSpec",
+    "K_MODULE_BALANCED_SHARED_SELECTOR",
+    "K_MODULE_BALANCED_TASK_SELECTOR_ENV_VAR",
+    "K_MODULE_BALANCED_TASK_SPECS",
+    "K_MODULE_BALANCED_TASKS_BY_ID",
+    "KModuleBalancedTaskSpec",
+    "CANONICAL_FEATURE_NAMES",
+    "RUST_ADAPTIVE_SORT_SHARED_SELECTOR",
+    "RUST_ADAPTIVE_SORT_TASK_SELECTOR_ENV_VAR",
+    "RUST_ADAPTIVE_SORT_TASK_SPECS",
+    "RUST_ADAPTIVE_SORT_TASKS_BY_ID",
+    "RustAdaptiveSortTaskSpec",
+    "SLDBENCH_3D_SHARED_SELECTOR",
+    "SLDBENCH_3D_TASK_SELECTOR_ENV_VAR",
+    "SLDBENCH_3D_TASK_SPECS",
+    "SLDBENCH_3D_TASKS_BY_ID",
+    "SLDBENCH_DATASET_REPO_ID",
+    "SLDBench3DTaskSpec",
+    "SIGNAL_PROCESSING_SHARED_SELECTOR",
+    "SIGNAL_PROCESSING_TASK_SELECTOR_ENV_VAR",
+    "SIGNAL_PROCESSING_TASK_SPECS",
+    "SIGNAL_PROCESSING_TASKS_BY_ID",
+    "SignalProcessingTaskSpec",
+    "get_family_definition",
+]

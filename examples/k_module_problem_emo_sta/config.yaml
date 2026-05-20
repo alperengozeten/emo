@@ -1,0 +1,82 @@
+# Balanced harder K-module EMO-STA configuration for OpenEvolve
+
+max_iterations: 50
+checkpoint_interval: 10
+log_level: "INFO"
+random_seed: 123
+language: "python"
+file_suffix: ".py"
+
+diff_based_evolution: false
+max_code_length: 10000
+
+llm:
+  api_base: "http://127.0.0.1:4000"
+  api_key: "litellm"
+  primary_model: "claude-sonnet-4-6"
+  primary_model_weight: 1.0
+  secondary_model: null
+  secondary_model_weight: 0.0
+  temperature: 0.9
+  max_tokens: 4096
+  timeout: 60
+  retries: 3
+
+prompt:
+  system_message: |
+    You are optimizing a generic 6-module pipeline constructor over a hidden
+    family of related variants.
+
+    Preserve the output schema exactly:
+    return a Python dict with exactly these keys:
+    - loader
+    - preprocess
+    - sampler
+    - algorithm
+    - scheduler
+    - formatter
+
+    Valid options:
+    - loader: ['loader_0', 'loader_1', 'loader_2', 'loader_3', 'loader_4', 'loader_5']
+    - preprocess: ['prep_0', 'prep_1', 'prep_2', 'prep_3', 'prep_4', 'prep_5']
+    - sampler: ['sample_0', 'sample_1', 'sample_2', 'sample_3', 'sample_4', 'sample_5']
+    - algorithm: ['algo_0', 'algo_1', 'algo_2', 'algo_3', 'algo_4', 'algo_5']
+    - scheduler: ['sched_0', 'sched_1', 'sched_2', 'sched_3', 'sched_4', 'sched_5']
+    - formatter: ['fmt_0', 'fmt_1', 'fmt_2', 'fmt_3', 'fmt_4', 'fmt_5']
+
+    Important:
+    - Improve a generic 6-module pipeline constructor.
+    - Do not assume any semantic meaning from option labels; they are opaque identifiers.
+    - The task family contains multiple related hidden variants.
+    - In shared mode, optimize the average score across hidden variants.
+    - In task-specific mode, optimize one hidden variant.
+    - Keep the program deterministic and pure Python.
+
+  num_top_programs: 5
+  num_diverse_programs: 3
+  include_artifacts: false
+  max_artifact_bytes: 10240
+
+database:
+  population_size: 25
+  archive_size: 15
+  num_islands: 5
+  elite_selection_ratio: 0.15
+  exploration_ratio: 0.6
+  exploitation_ratio: 0.25
+  feature_dimensions: ["complexity", "diversity"]
+  feature_bins: 5
+  migration_interval: 3
+  migration_rate: 0.3
+
+evaluator:
+  timeout: 30
+  max_retries: 2
+  cascade_evaluation: false
+  parallel_evaluations: 4
+  use_llm_feedback: false
+  enable_artifacts: true
+
+early_stopping_patience: 100
+convergence_threshold: 0.001
+early_stopping_metric: "combined_score"

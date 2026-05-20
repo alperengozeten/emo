@@ -1,0 +1,358 @@
+{
+  "figure": "emo_sta_subtask_gain_profile_best_local",
+  "summary_json": "multi_task_shared_then_adapt/docs/emo_sta_results_summary.json",
+  "family_count": 6,
+  "preset": "emo_sta_table",
+  "phase_pair": "best_local",
+  "start_label": "STA Best-Shared (Before Adaptation)",
+  "end_label": "STA Best-Local",
+  "include_families": [
+    "function_minimization",
+    "circle_packing",
+    "circle_packing_rectangle",
+    "heilbronn_triangle",
+    "signal_processing",
+    "sldbench_3d"
+  ],
+  "exclude_families": [],
+  "families": [
+    {
+      "family_id": "function_minimization",
+      "family_label": "Function minimization",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=40 | adapt=15 | baseline=25 | edit=full",
+        "model=claude-opus-4-5 | shared=40 | adapt=15 | baseline=25 | edit=full",
+        "model=claude-opus-4-6 | shared=40 | adapt=15 | baseline=25 | edit=full",
+        "model=claude-sonnet-4-5 | shared=40 | adapt=15 | baseline=25 | edit=full",
+        "model=claude-sonnet-4-6 | shared=40 | adapt=15 | baseline=25 | edit=full"
+      ],
+      "family_mean_end_minus_baseline": 0.05825672384351145,
+      "tasks": [
+        {
+          "task_id": "fm_rastrigin_2d",
+          "task_label": "Rastrigin",
+          "start_minus_baseline_mean": 0.09688703057566976,
+          "end_minus_baseline_mean": 0.18132805057799545,
+          "end_minus_start_mean": 0.0844410200023257,
+          "wins": 18,
+          "losses": 0,
+          "ties": 7,
+          "comparable": 25
+        },
+        {
+          "task_id": "fm_rosenbrock_2d",
+          "task_label": "Rosenbrock",
+          "start_minus_baseline_mean": -0.0241034722545481,
+          "end_minus_baseline_mean": 0.03693797530056165,
+          "end_minus_start_mean": 0.06104144755510974,
+          "wins": 25,
+          "losses": 0,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "fm_ackley_2d",
+          "task_label": "Ackley",
+          "start_minus_baseline_mean": -0.01265978478716312,
+          "end_minus_baseline_mean": 0.00886161834064677,
+          "end_minus_start_mean": 0.02152140312780989,
+          "wins": 23,
+          "losses": 0,
+          "ties": 2,
+          "comparable": 25
+        },
+        {
+          "task_id": "fm_sincosxy_2d",
+          "task_label": "Oscillatory Basin",
+          "start_minus_baseline_mean": -0.054970112435060475,
+          "end_minus_baseline_mean": 0.005899251154841929,
+          "end_minus_start_mean": 0.06086936358990241,
+          "wins": 24,
+          "losses": 0,
+          "ties": 1,
+          "comparable": 25
+        }
+      ]
+    },
+    {
+      "family_id": "circle_packing",
+      "family_label": "Circle packing",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-opus-4-5 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-opus-4-6 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-sonnet-4-5 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-sonnet-4-6 | shared=60 | adapt=15 | baseline=30 | edit=full"
+      ],
+      "family_mean_end_minus_baseline": 0.03924087795285935,
+      "tasks": [
+        {
+          "task_id": "cp_n26",
+          "task_label": "N=26",
+          "start_minus_baseline_mean": 0.02285493612550681,
+          "end_minus_baseline_mean": 0.04609516798941707,
+          "end_minus_start_mean": 0.023240231863910256,
+          "wins": 24,
+          "losses": 0,
+          "ties": 1,
+          "comparable": 25
+        },
+        {
+          "task_id": "cp_n24",
+          "task_label": "N=24",
+          "start_minus_baseline_mean": 0.02259559813424217,
+          "end_minus_baseline_mean": 0.04503603977421735,
+          "end_minus_start_mean": 0.022440441639975175,
+          "wins": 23,
+          "losses": 0,
+          "ties": 2,
+          "comparable": 25
+        },
+        {
+          "task_id": "cp_n22",
+          "task_label": "N=22",
+          "start_minus_baseline_mean": 0.020001414684772595,
+          "end_minus_baseline_mean": 0.042117658160718614,
+          "end_minus_start_mean": 0.02211624347594602,
+          "wins": 23,
+          "losses": 0,
+          "ties": 2,
+          "comparable": 25
+        },
+        {
+          "task_id": "cp_n20",
+          "task_label": "N=20",
+          "start_minus_baseline_mean": -0.0090742478676064,
+          "end_minus_baseline_mean": 0.02371464588708435,
+          "end_minus_start_mean": 0.03278889375469075,
+          "wins": 23,
+          "losses": 0,
+          "ties": 2,
+          "comparable": 25
+        }
+      ]
+    },
+    {
+      "family_id": "circle_packing_rectangle",
+      "family_label": "Circle packing rectangles",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-opus-4-5 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-opus-4-6 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-sonnet-4-5 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-sonnet-4-6 | shared=60 | adapt=15 | baseline=30 | edit=full"
+      ],
+      "family_mean_end_minus_baseline": 0.03380953656117918,
+      "tasks": [
+        {
+          "task_id": "cp_rect_n23",
+          "task_label": "N=23",
+          "start_minus_baseline_mean": 0.028788928113979803,
+          "end_minus_baseline_mean": 0.04048389586443674,
+          "end_minus_start_mean": 0.011694967750456935,
+          "wins": 19,
+          "losses": 0,
+          "ties": 6,
+          "comparable": 25
+        },
+        {
+          "task_id": "cp_rect_n21",
+          "task_label": "N=21",
+          "start_minus_baseline_mean": 0.009253506232803042,
+          "end_minus_baseline_mean": 0.03784156086480941,
+          "end_minus_start_mean": 0.028588054632006362,
+          "wins": 21,
+          "losses": 0,
+          "ties": 4,
+          "comparable": 25
+        },
+        {
+          "task_id": "cp_rect_n22",
+          "task_label": "N=22",
+          "start_minus_baseline_mean": 0.011124632217085205,
+          "end_minus_baseline_mean": 0.028791132799568665,
+          "end_minus_start_mean": 0.01766650058248346,
+          "wins": 18,
+          "losses": 0,
+          "ties": 7,
+          "comparable": 25
+        },
+        {
+          "task_id": "cp_rect_n20",
+          "task_label": "N=20",
+          "start_minus_baseline_mean": 0.006926037735121575,
+          "end_minus_baseline_mean": 0.028121556715901903,
+          "end_minus_start_mean": 0.02119551898078033,
+          "wins": 20,
+          "losses": 0,
+          "ties": 5,
+          "comparable": 25
+        }
+      ]
+    },
+    {
+      "family_id": "heilbronn_triangle",
+      "family_label": "Heilbronn triangle",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-opus-4-5 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-opus-4-6 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-sonnet-4-5 | shared=60 | adapt=15 | baseline=30 | edit=full",
+        "model=claude-sonnet-4-6 | shared=60 | adapt=15 | baseline=30 | edit=full"
+      ],
+      "family_mean_end_minus_baseline": 0.12005318949565703,
+      "tasks": [
+        {
+          "task_id": "heil_tri_n12",
+          "task_label": "N=12",
+          "start_minus_baseline_mean": -0.010578975394055922,
+          "end_minus_baseline_mean": 0.15151564331394357,
+          "end_minus_start_mean": 0.1620946187079995,
+          "wins": 25,
+          "losses": 0,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "heil_tri_n11",
+          "task_label": "N=11",
+          "start_minus_baseline_mean": 0.007467430993411026,
+          "end_minus_baseline_mean": 0.13847176269723852,
+          "end_minus_start_mean": 0.1310043317038275,
+          "wins": 25,
+          "losses": 0,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "heil_tri_n10",
+          "task_label": "N=10",
+          "start_minus_baseline_mean": 0.017530044249546635,
+          "end_minus_baseline_mean": 0.10311308614496112,
+          "end_minus_start_mean": 0.08558304189541449,
+          "wins": 22,
+          "losses": 0,
+          "ties": 3,
+          "comparable": 25
+        },
+        {
+          "task_id": "heil_tri_n9",
+          "task_label": "N=9",
+          "start_minus_baseline_mean": -0.03302365906979862,
+          "end_minus_baseline_mean": 0.08711226582648492,
+          "end_minus_start_mean": 0.12013592489628355,
+          "wins": 24,
+          "losses": 0,
+          "ties": 1,
+          "comparable": 25
+        }
+      ]
+    },
+    {
+      "family_id": "signal_processing",
+      "family_label": "Signal processing",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=60 | adapt=10 | baseline=25 | edit=full",
+        "model=claude-opus-4-5 | shared=60 | adapt=10 | baseline=25 | edit=full",
+        "model=claude-opus-4-6 | shared=60 | adapt=10 | baseline=25 | edit=full",
+        "model=claude-sonnet-4-5 | shared=60 | adapt=10 | baseline=25 | edit=full",
+        "model=claude-sonnet-4-6 | shared=60 | adapt=10 | baseline=25 | edit=full"
+      ],
+      "family_mean_end_minus_baseline": 0.03584855374260008,
+      "tasks": [
+        {
+          "task_id": "sp_trend_sine_500_n02",
+          "task_label": "trend+sine",
+          "start_minus_baseline_mean": 0.05223796641542765,
+          "end_minus_baseline_mean": 0.07560961879491122,
+          "end_minus_start_mean": 0.023371652379483573,
+          "wins": 17,
+          "losses": 0,
+          "ties": 8,
+          "comparable": 25
+        },
+        {
+          "task_id": "sp_multifreq_600_n03",
+          "task_label": "multi-freq",
+          "start_minus_baseline_mean": 0.018820566721222443,
+          "end_minus_baseline_mean": 0.03545379227572362,
+          "end_minus_start_mean": 0.01663322555450118,
+          "wins": 17,
+          "losses": 0,
+          "ties": 8,
+          "comparable": 25
+        },
+        {
+          "task_id": "sp_chirp_700_n04",
+          "task_label": "chirp",
+          "start_minus_baseline_mean": -0.01428431089277709,
+          "end_minus_baseline_mean": 0.019749939818522678,
+          "end_minus_start_mean": 0.03403425071129977,
+          "wins": 22,
+          "losses": 0,
+          "ties": 3,
+          "comparable": 25
+        },
+        {
+          "task_id": "sp_step_800_n05",
+          "task_label": "step",
+          "start_minus_baseline_mean": -0.03483336925664301,
+          "end_minus_baseline_mean": 0.01258086408124278,
+          "end_minus_start_mean": 0.04741423333788578,
+          "wins": 24,
+          "losses": 0,
+          "ties": 1,
+          "comparable": 25
+        }
+      ]
+    },
+    {
+      "family_id": "sldbench_3d",
+      "family_label": "SLDBench-3D",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=60 | adapt=10 | baseline=40 | edit=full",
+        "model=claude-opus-4-5 | shared=60 | adapt=10 | baseline=40 | edit=full",
+        "model=claude-opus-4-6 | shared=60 | adapt=10 | baseline=40 | edit=full",
+        "model=claude-sonnet-4-5 | shared=60 | adapt=10 | baseline=40 | edit=full",
+        "model=claude-sonnet-4-6 | shared=60 | adapt=10 | baseline=40 | edit=full"
+      ],
+      "family_mean_end_minus_baseline": 0.011662421366021428,
+      "tasks": [
+        {
+          "task_id": "data_constrained_scaling_law",
+          "task_label": "data-constr",
+          "start_minus_baseline_mean": 0.0029500487678516406,
+          "end_minus_baseline_mean": 0.023593230045629708,
+          "end_minus_start_mean": 0.020643181277778068,
+          "wins": 20,
+          "losses": 0,
+          "ties": 5,
+          "comparable": 25
+        },
+        {
+          "task_id": "vocab_scaling_law",
+          "task_label": "vocab",
+          "start_minus_baseline_mean": -0.01711567791756114,
+          "end_minus_baseline_mean": -0.0002683873135868531,
+          "end_minus_start_mean": 0.016847290603974288,
+          "wins": 24,
+          "losses": 0,
+          "ties": 1,
+          "comparable": 25
+        }
+      ]
+    }
+  ]
+}

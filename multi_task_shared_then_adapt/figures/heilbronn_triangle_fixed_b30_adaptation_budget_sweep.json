@@ -1,0 +1,492 @@
+{
+  "manifest": "multi_task_shared_then_adapt/configs/",
+  "results_dir": "multi_task_shared_then_adapt/results/heilbronn_triangle",
+  "fixed_baseline": 30,
+  "single_task_source_mode": "emo_sta_table_selected_budget",
+  "single_task_source_budget": {
+    "shared": 60,
+    "adapt": 15,
+    "baseline": 30,
+    "task_count": 4,
+    "total": 120,
+    "label": "60 / 15 / 120"
+  },
+  "y_limits": [
+    0.5,
+    0.8
+  ],
+  "hide_legend": true,
+  "methods": [
+    {
+      "field": "baseline_mean",
+      "label": "Single-task",
+      "color": "#F6C8B8",
+      "hatch": ""
+    },
+    {
+      "field": "adapt_mean",
+      "label": "Warmstart",
+      "color": "#A9D8C8",
+      "hatch": "/"
+    },
+    {
+      "field": "best_local_mean",
+      "label": "Best-Local",
+      "color": "#A9D8C8",
+      "hatch": ""
+    },
+    {
+      "field": "best_shared_mean",
+      "label": "Best-Shared",
+      "color": "#A9D8C8",
+      "hatch": "x"
+    }
+  ],
+  "edge_color": "#000000",
+  "budgets": [
+    {
+      "budget": {
+        "shared": 20,
+        "adapt": 25,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "20 / 25 / 120"
+      },
+      "models": [
+        {
+          "id": "claude-haiku-4-5",
+          "label": "Haiku-4.5",
+          "baseline_mean": 0.5467442995316214,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.6269835342993025,
+          "adapt_mean": 0.644347233957837,
+          "best_local_mean": 0.6488707595265926,
+          "best_shared_mean": 0.6252785969626748
+        },
+        {
+          "id": "claude-sonnet-4-5",
+          "label": "Sonnet-4.5",
+          "baseline_mean": 0.548283278909306,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.6201258713844674,
+          "adapt_mean": 0.6582332884735551,
+          "best_local_mean": 0.6602887296835982,
+          "best_shared_mean": 0.6544819171682227
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "label": "Sonnet-4.6",
+          "baseline_mean": 0.6784875551961596,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.7204452346245105,
+          "adapt_mean": 0.7937416547312864,
+          "best_local_mean": 0.7791481675653514,
+          "best_shared_mean": 0.7492524921213637
+        },
+        {
+          "id": "claude-opus-4-5",
+          "label": "Opus-4.5",
+          "baseline_mean": 0.6215384980916466,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.7164749921493306,
+          "adapt_mean": 0.7102765951565787,
+          "best_local_mean": 0.7080859586326307,
+          "best_shared_mean": 0.6609093960915329
+        },
+        {
+          "id": "claude-opus-4-6",
+          "label": "Opus-4.6",
+          "baseline_mean": 0.7440438457721383,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.7829111960379871,
+          "adapt_mean": 0.8518568482942179,
+          "best_local_mean": 0.8454074430824916,
+          "best_shared_mean": 0.8425119406879725
+        }
+      ],
+      "baseline_mean": 0.6278194955001744,
+      "baseline_std_across_models": 0.08516748198237227,
+      "adapt_mean": 0.7316911241226951,
+      "adapt_std_across_models": 0.08912583861134454,
+      "best_local_mean": 0.7283602116981329,
+      "best_local_std_across_models": 0.08313064393390816,
+      "best_shared_mean": 0.7064868686063533,
+      "best_shared_std_across_models": 0.08903415517051914,
+      "model_count": 5
+    },
+    {
+      "budget": {
+        "shared": 40,
+        "adapt": 20,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "40 / 20 / 120"
+      },
+      "models": [
+        {
+          "id": "claude-haiku-4-5",
+          "label": "Haiku-4.5",
+          "baseline_mean": 0.5467442995316214,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.5779720690535016,
+          "adapt_mean": 0.6201573468911246,
+          "best_local_mean": 0.6631375549633061,
+          "best_shared_mean": 0.6514921031572595
+        },
+        {
+          "id": "claude-sonnet-4-5",
+          "label": "Sonnet-4.5",
+          "baseline_mean": 0.548283278909306,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.5490143923962391,
+          "adapt_mean": 0.5524649542950169,
+          "best_local_mean": 0.6232607981235233,
+          "best_shared_mean": 0.5765033419096539
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "label": "Sonnet-4.6",
+          "baseline_mean": 0.6784875551961596,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.7243694981033683,
+          "adapt_mean": 0.8026492462297666,
+          "best_local_mean": 0.8356959703827149,
+          "best_shared_mean": 0.7800950964246571
+        },
+        {
+          "id": "claude-opus-4-5",
+          "label": "Opus-4.5",
+          "baseline_mean": 0.6215384980916466,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.6660499747751656,
+          "adapt_mean": 0.6982810940575228,
+          "best_local_mean": 0.703324353836418,
+          "best_shared_mean": 0.719119566737697
+        },
+        {
+          "id": "claude-opus-4-6",
+          "label": "Opus-4.6",
+          "baseline_mean": 0.7440438457721383,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.7508273336709914,
+          "adapt_mean": 0.8177837566380669,
+          "best_local_mean": 0.8348747298141029,
+          "best_shared_mean": 0.8419606125061607
+        }
+      ],
+      "baseline_mean": 0.6278194955001744,
+      "baseline_std_across_models": 0.08516748198237227,
+      "adapt_mean": 0.6982672796222996,
+      "adapt_std_across_models": 0.11460722390413802,
+      "best_local_mean": 0.732058681424013,
+      "best_local_std_across_models": 0.09839282257163598,
+      "best_shared_mean": 0.7138341441470857,
+      "best_shared_std_across_models": 0.1043804587803852,
+      "model_count": 5
+    },
+    {
+      "budget": {
+        "shared": 60,
+        "adapt": 15,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "60 / 15 / 120"
+      },
+      "models": [
+        {
+          "id": "claude-haiku-4-5",
+          "label": "Haiku-4.5",
+          "baseline_mean": 0.5467442995316214,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.5467442995316214,
+          "adapt_mean": 0.6283972730791574,
+          "best_local_mean": 0.6502490455326385,
+          "best_shared_mean": 0.6282821954633706
+        },
+        {
+          "id": "claude-sonnet-4-5",
+          "label": "Sonnet-4.5",
+          "baseline_mean": 0.548283278909306,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.548283278909306,
+          "adapt_mean": 0.596255940944447,
+          "best_local_mean": 0.6221837982565365,
+          "best_shared_mean": 0.6190585119739029
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "label": "Sonnet-4.6",
+          "baseline_mean": 0.6784875551961596,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.6784875551961596,
+          "adapt_mean": 0.8089965336694196,
+          "best_local_mean": 0.8624574492848817,
+          "best_shared_mean": 0.864877755222286
+        },
+        {
+          "id": "claude-opus-4-5",
+          "label": "Opus-4.5",
+          "baseline_mean": 0.6215384980916466,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.6215384980916466,
+          "adapt_mean": 0.7322150173312336,
+          "best_local_mean": 0.7414116274831886,
+          "best_shared_mean": 0.7035984501042372
+        },
+        {
+          "id": "claude-opus-4-6",
+          "label": "Opus-4.6",
+          "baseline_mean": 0.7440438457721383,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.7440438457721383,
+          "adapt_mean": 0.8435693561146447,
+          "best_local_mean": 0.8630615044219118,
+          "best_shared_mean": 0.8771119547597234
+        }
+      ],
+      "baseline_mean": 0.6278194955001744,
+      "baseline_std_across_models": 0.08516748198237227,
+      "adapt_mean": 0.7218868242277805,
+      "adapt_std_across_models": 0.10842604233613379,
+      "best_local_mean": 0.7478726849958314,
+      "best_local_std_across_models": 0.11376285512408676,
+      "best_shared_mean": 0.738585773504704,
+      "best_shared_std_across_models": 0.1253165251630391,
+      "model_count": 5
+    },
+    {
+      "budget": {
+        "shared": 80,
+        "adapt": 10,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "80 / 10 / 120"
+      },
+      "models": [
+        {
+          "id": "claude-haiku-4-5",
+          "label": "Haiku-4.5",
+          "baseline_mean": 0.5467442995316214,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.5621286254431477,
+          "adapt_mean": 0.636259316419667,
+          "best_local_mean": 0.6590175000230538,
+          "best_shared_mean": 0.6436470492819437
+        },
+        {
+          "id": "claude-sonnet-4-5",
+          "label": "Sonnet-4.5",
+          "baseline_mean": 0.548283278909306,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.5852673542859824,
+          "adapt_mean": 0.6265879225529917,
+          "best_local_mean": 0.6342785657153309,
+          "best_shared_mean": 0.6184429217991275
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "label": "Sonnet-4.6",
+          "baseline_mean": 0.6784875551961596,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.6901654266084879,
+          "adapt_mean": 0.8161034315274204,
+          "best_local_mean": 0.8344986045845525,
+          "best_shared_mean": 0.8050201710237179
+        },
+        {
+          "id": "claude-opus-4-5",
+          "label": "Opus-4.5",
+          "baseline_mean": 0.6215384980916466,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.6242370718770938,
+          "adapt_mean": 0.7396348501849918,
+          "best_local_mean": 0.7395862404219647,
+          "best_shared_mean": 0.6892650286303256
+        },
+        {
+          "id": "claude-opus-4-6",
+          "label": "Opus-4.6",
+          "baseline_mean": 0.7440438457721383,
+          "baseline_source_budget": {
+            "shared": 60,
+            "adapt": 15,
+            "baseline": 30,
+            "task_count": 4,
+            "total": 120,
+            "label": "60 / 15 / 120"
+          },
+          "n_runs": 5.0,
+          "setting_baseline_mean": 0.7424854222467295,
+          "adapt_mean": 0.8308266814758648,
+          "best_local_mean": 0.8399433769080289,
+          "best_shared_mean": 0.8380412194487699
+        }
+      ],
+      "baseline_mean": 0.6278194955001744,
+      "baseline_std_across_models": 0.08516748198237227,
+      "adapt_mean": 0.7298824404321872,
+      "adapt_std_across_models": 0.09637680656552454,
+      "best_local_mean": 0.7414648575305861,
+      "best_local_std_across_models": 0.09571219094895313,
+      "best_shared_mean": 0.7188832780367769,
+      "best_shared_std_across_models": 0.09778059024070923,
+      "model_count": 5
+    }
+  ]
+}

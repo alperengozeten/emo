@@ -1,0 +1,16 @@
+family: function_minimization
+initial_program: ../../examples/function_minimization_emo_sta/initial_program.py
+evaluation_file: ../../examples/function_minimization_emo_sta/evaluator.py
+base_config: ../../examples/function_minimization_emo_sta/config.yaml
+output_root: ../results/function_minimization
+manifest_label: function_minimization
+default_shared_iterations: 20
+default_adaptation_iterations: 20
+default_baseline_iterations: 25
+wandb:
+  enabled: true
+  project: openevolve-emo-sta
+  single_run: true
+  log_best_program_artifact: true
+  log_checkpoint_artifact: false
+  log_code: false

@@ -1,0 +1,16 @@
+family: sldbench_3d
+initial_program: ../../examples/sldbench_3d_emo_sta/initial_program.py
+evaluation_file: ../../examples/sldbench_3d_emo_sta/evaluator.py
+base_config: ../../examples/sldbench_3d_emo_sta/config.yaml
+output_root: ../results/sldbench_3d
+manifest_label: sldbench_3d
+default_shared_iterations: 14
+default_adaptation_iterations: 10
+default_baseline_iterations: 17
+wandb:
+  enabled: true
+  project: openevolve-emo-sta
+  single_run: true
+  log_best_program_artifact: true
+  log_checkpoint_artifact: false
+  log_code: false

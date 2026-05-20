@@ -1,0 +1,71 @@
+# Rust adaptive sort EMO-STA configuration for OpenEvolve
+
+max_iterations: 12
+checkpoint_interval: 6
+log_level: "INFO"
+random_seed: 123
+language: "rust"
+file_suffix: ".rs"
+
+diff_based_evolution: false
+max_code_length: 24000
+
+llm:
+  api_base: "http://127.0.0.1:4000"
+  api_key: "litellm"
+  primary_model: "claude-sonnet-4-6"
+  primary_model_weight: 1.0
+  secondary_model: null
+  secondary_model_weight: 0.0
+  temperature: 0.7
+  max_tokens: 8192
+  timeout: 90
+  retries: 3
+
+prompt:
+  system_message: |
+    You are improving a generic adaptive sorting algorithm for a
+    multi-task shared-then-adapt workflow.
+
+    Important requirements:
+    - Preserve the public entry point exactly:
+      - adaptive_sort<T: Ord + Clone>(arr: &mut [T])
+    - Keep the algorithm generic and task-agnostic.
+    - Do not hardcode task IDs.
+    - Do not special-case logic based only on the known benchmark sizes.
+    - Adapt using input characteristics such as small-array behavior, local
+      disorder, duplicate density, and partition balance.
+    - Maintain correctness first.
+    - Use safe, idiomatic Rust.
+    - The candidate should not print output and should not contain benchmark code.
+    - Useful generic ideas include insertion-sort cutoffs, median-of-three pivot
+      selection, duplicate-aware partitioning, nearly-sorted detection, and
+      hybrid quicksort/introsort style designs.
+
+  num_top_programs: 5
+  num_diverse_programs: 3
+  include_artifacts: true
+  max_artifact_bytes: 32768
+
+database:
+  population_size: 40
+  archive_size: 12
+  num_islands: 4
+  elite_selection_ratio: 0.2
+  exploration_ratio: 0.55
+  exploitation_ratio: 0.25
+  feature_dimensions: ["score", "speed_score", "consistency_score"]
+  feature_bins: 5
+  migration_interval: 3
+  migration_rate: 0.25
+
+evaluator:
+  timeout: 120
+  parallel_evaluations: 1
+  cascade_evaluation: false
+  enable_artifacts: true
+  use_llm_feedback: false
+
+early_stopping_patience: 100
+convergence_threshold: 0.001
+early_stopping_metric: "combined_score"

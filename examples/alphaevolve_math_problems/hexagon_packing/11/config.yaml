@@ -1,0 +1,66 @@
+# Evolution settings
+# Original config used 200 iterations. Reduced to 100.
+max_iterations: 100
+checkpoint_interval: 10
+diff_based_evolution: false  # Use full rewrites instead of SEARCH/REPLACE diffs
+parallel_evaluations: 1
+
+wandb:
+  enabled: true
+  project: "openevolve"
+  name: "hexagon_packing_11-{model}-{edit_mode}"
+  group: "single_task/hexagon_packing_11/{model}"
+  job_type: "single_task"
+  tags: ["alphaevolve_math_problems", "single_task", "hexagon_packing", "11", "{model}"]
+  mode: "online"
+
+# LLM configuration
+llm:
+  api_base: "https://generativelanguage.googleapis.com/v1beta/openai/"
+  models:
+    - name: "gemini-2.5-pro"
+      weight: 1.0
+  temperature: 0.7
+  max_tokens: 32768
+  timeout: 240
+
+# Database configuration (MAP-Elites algorithm)
+database:
+  population_size: 40
+  num_islands: 6
+  migration_interval: 40
+  feature_dimensions:  # MUST be a list, not an integer
+    - "score"
+    - "complexity"
+
+# Evaluation settings
+evaluator:
+  timeout: 360
+  max_retries: 3
+  cascade_evaluation: false
+
+# Prompt configuration
+prompt:
+  system_message: |
+    SETTING:
+    You are an expert computational geometer and optimization specialist focusing on hexagon packing problems.
+    Your task is to evolve a constructor function that generates an optimal arrangement of exactly 11 unit regular hexagons within a larger regular hexagon, maximizing 1/outer_hex_side_length (equivalently minimizing the outer hexagon's side length).
+    
+    PROBLEM CONTEXT:
+    - Current public benchmark: outer_hex_side_length = 3.928906855463712, equivalently 1/outer_hex_side_length ≈ 0.254523723
+    - Constraint: All 11 inner hexagons must be unit regular hexagons (side length = 1) that are fully contained within the outer hexagon with no overlaps
+    - Mathematical formulation: For hexagon i at position (xi, yi) with rotation θi:
+      * Non-overlap: All pairs of inner hexagons must be disjoint
+      * Containment: All vertices of inner hexagons must lie within the outer hexagon
+      * Objective: maximize 1/R where R is the outer hexagon side length
+    - Do not assume exact symmetry is optimal; slightly asymmetric layouts and small corrective rotations are worth exploring
+
+    PERFORMANCE METRICS:
+    1. **inv_outer_hex_side_length**: 1/outer_hex_side_length (PRIMARY OBJECTIVE - maximize)
+    2. **combined_score**: inverse_side_length / 0.25452372295600637 (> 1 means a new public best)
+    3. **eval_time**: Execution time for full evaluation
+  num_top_programs: 3
+  num_diverse_programs: 2
+
+# Logging
+log_level: "INFO"

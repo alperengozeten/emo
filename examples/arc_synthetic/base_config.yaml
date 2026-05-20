@@ -1,0 +1,40 @@
+max_iterations: 40
+checkpoint_interval: 5
+log_level: "INFO"
+
+llm:
+  primary_model: "gemini-2.5-pro"
+  primary_model_weight: 1.0
+  secondary_model: null
+  secondary_model_weight: 0.0
+  api_base: "https://generativelanguage.googleapis.com/v1beta/openai/"
+  temperature: 0.7
+  top_p: 0.95
+  max_tokens: 12000
+
+prompt:
+  system_message: |
+    You are solving a synthetic ARC-style grid transformation task.
+
+    The evaluator task is chosen via ARC_SYNTHETIC_TASK_ID. Use the train examples
+    shown in the calling config, infer a simple transformation rule, and produce two
+    candidate attempts that generalize to held-out examples.
+  num_top_programs: 3
+  num_diverse_programs: 2
+  use_template_stochasticity: true
+
+database:
+  population_size: 60
+  archive_size: 30
+  num_islands: 4
+  elite_selection_ratio: 0.15
+  exploitation_ratio: 0.65
+
+evaluator:
+  timeout: 120
+  max_retries: 3
+  parallel_evaluations: 2
+  cascade_evaluation: false
+
+diff_based_evolution: false
+max_code_length: 60000

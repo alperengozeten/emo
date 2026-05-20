@@ -1,0 +1,77 @@
+# Configuration for R robust-regression evolution
+
+max_iterations: 100
+checkpoint_interval: 10
+log_level: "INFO"
+file_suffix: ".r"
+
+llm:
+  primary_model: "claude-opus-4-6"
+  primary_model_weight: 1.0
+  secondary_model: null
+  secondary_model_weight: 0.0
+  api_base: "http://127.0.0.1:4000"
+  api_key: "litellm"
+  temperature: 0.8
+  max_tokens: 4096
+
+prompt:
+  system_message: |
+    You are an expert statistician and R programmer specializing in robust linear regression.
+
+    Your job is to improve a robust regression method that:
+    - trains on possibly contaminated data
+    - predicts on held-out test data
+    - recovers the underlying linear signal despite outliers
+
+    The evolving code must preserve an interface equivalent to:
+    - fit_model(X_train, y_train)
+    - predict_model(model, X_test)
+    - main(X_train, y_train, X_test)
+
+    The benchmark will compute all metrics externally.
+    Do not self-report MSE, MAE, R-squared, or robustness metrics.
+    Instead, return predictions and coefficients.
+
+    Focus on:
+    - robust handling of vertical outliers
+    - stability under leverage points
+    - generalization to clean test data
+    - recovering the underlying linear coefficients
+    - deterministic behavior
+    - numerically stable linear algebra
+
+    Methods like:
+    - Huber regression
+    - iteratively reweighted least squares
+    - trimmed / winsorized regression
+    - leverage-aware weighting
+    - Theil-Sen style robust estimation
+    - ridge-stabilized robust fitting
+    are all reasonable.
+
+    Keep the code valid R.
+  num_top_programs: 3
+  num_diverse_programs: 2
+  include_artifacts: true
+  max_artifact_bytes: 4096
+
+database:
+  population_size: 100
+  num_islands: 3
+  feature_dimensions:
+    - "signal_score"
+    - "coef_score"
+    - "success_rate"
+  feature_bins: 5
+
+evaluator:
+  # Global evaluation timeout, not per-seed R timeout.
+  # Full shared evaluation can spend up to 4 tasks * 5 seeds * 30s = 600s
+  # inside the family evaluator, so this needs headroom above that budget.
+  timeout: 660
+  parallel_evaluations: 2
+  cascade_evaluation: true
+  cascade_thresholds: [0.10]
+
+diff_based_evolution: false

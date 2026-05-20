@@ -1,0 +1,16 @@
+family: circle_packing
+initial_program: ../../examples/circle_packing_emo_sta/initial_program.py
+evaluation_file: ../../examples/circle_packing_emo_sta/evaluator.py
+base_config: ../../examples/circle_packing_emo_sta/config.yaml
+output_root: ../results/circle_packing
+manifest_label: circle_packing
+default_shared_iterations: 15
+default_adaptation_iterations: 12
+default_baseline_iterations: 15
+wandb:
+  enabled: true
+  project: openevolve-emo-sta
+  single_run: true
+  log_best_program_artifact: true
+  log_checkpoint_artifact: false
+  log_code: false

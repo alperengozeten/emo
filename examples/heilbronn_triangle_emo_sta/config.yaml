@@ -1,0 +1,106 @@
+# Heilbronn triangle EMO-STA configuration for OpenEvolve
+
+max_iterations: 15
+checkpoint_interval: 15
+log_level: "INFO"
+random_seed: 123
+language: "python"
+file_suffix: ".py"
+
+diff_based_evolution: false
+max_code_length: 32000
+
+llm:
+  api_base: "http://127.0.0.1:4000"
+  api_key: "litellm"
+  primary_model: "claude-sonnet-4-6"
+  primary_model_weight: 1.0
+  secondary_model: null
+  secondary_model_weight: 0.0
+  temperature: 0.7
+  max_tokens: 8192
+  timeout: 180
+  retries: 3
+
+prompt:
+  system_message: |
+    You are an expert mathematician specializing in combinatorial and continuous geometry.
+
+    Your task is to improve a generic constructor/optimizer for the Heilbronn triangle problem in a unit-area triangle.
+
+    The evolving code must preserve these exact function signatures:
+
+    def construct_points(n: int):
+        ...
+        return points, min_area
+
+    def run_heilbronn(n: int):
+        return construct_points(n)
+
+    The evaluator uses one fixed canonical unit-area triangle:
+    A = (0.0, 0.0)
+    B = (2.0, 0.0)
+    C = (0.0, 1.0)
+
+    A point (x, y) is inside the triangle iff:
+    - x >= 0
+    - y >= 0
+    - x / 2 + y <= 1
+
+    The evaluator will call your code for multiple related tasks with:
+    n in {9, 10, 11, 12}
+
+    Public pinned scoring anchors:
+    - n=9: 0.0548469387755102
+    - n=10: 0.04337673349889024
+    - n=11: 0.03609267801015405
+    - n=12: 0.03100478174352528
+
+    Constraints:
+    - points must have shape (n, 2)
+    - all points must be finite
+    - all points must lie on or inside the canonical triangle
+    - keep the algorithm deterministic
+
+    Guidance:
+    - Favor reusable geometric construction and optimization routines parameterized by n
+    - Avoid implementing four completely separate hardcoded exact configurations as the main strategy
+    - Boundary-heavy configurations, symmetry, barycentric parameterizations, deterministic local improvement, and maximizing the worst triple area are all reasonable ideas
+    - Duplicates or collinear triples are feasible but will produce zero score, so try to avoid them
+    - Because all unit-area triangles are affinely equivalent, it is acceptable to optimize only in this canonical triangle
+    - Focus on valid point sets first, then improve the minimum triangle area
+
+    Do not use plotting code inside the evolved block.
+    Do not print debugging output from the evolved block.
+    Write all improvements only between # EVOLVE-BLOCK-START and # EVOLVE-BLOCK-END.
+
+  num_top_programs: 3
+  num_diverse_programs: 2
+  use_template_stochasticity: true
+  include_artifacts: true
+  max_artifact_bytes: 20480
+
+database:
+  population_size: 80
+  archive_size: 40
+  num_islands: 4
+  elite_selection_ratio: 0.1
+  exploration_ratio: 0.3
+  exploitation_ratio: 0.6
+  feature_dimensions: ["point_spread", "boundary_utilization"]
+  feature_bins: 10
+  migration_interval: 15
+  migration_rate: 0.15
+
+evaluator:
+  timeout: 300
+  max_retries: 2
+  cascade_evaluation: true
+  cascade_thresholds: [0.4, 0.75]
+  parallel_evaluations: 2
+  use_llm_feedback: false
+  enable_artifacts: true
+
+early_stopping_patience: 100
+convergence_threshold: 0.001
+early_stopping_metric: "combined_score"

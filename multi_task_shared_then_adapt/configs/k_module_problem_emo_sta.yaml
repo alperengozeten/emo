@@ -1,0 +1,15 @@
+family: k_module_problem_balanced
+initial_program: ../../examples/k_module_problem_emo_sta/initial_program.py
+evaluation_file: ../../examples/k_module_problem_emo_sta/evaluator.py
+base_config: ../../examples/k_module_problem_emo_sta/config.yaml
+output_root: ../results/k_module_problem_balanced
+default_shared_iterations: 20
+default_adaptation_iterations: 20
+default_baseline_iterations: 25
+wandb:
+  enabled: true
+  project: openevolve-emo-sta
+  single_run: true
+  log_best_program_artifact: true
+  log_checkpoint_artifact: false
+  log_code: false

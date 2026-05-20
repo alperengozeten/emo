@@ -1,0 +1,248 @@
+{
+  "manifest": "multi_task_shared_then_adapt/configs/",
+  "results_dir": "multi_task_shared_then_adapt/results/function_minimization",
+  "fixed_baseline": 25,
+  "include_shared": false,
+  "budgets": [
+    {
+      "budget": {
+        "shared": 20,
+        "adapt": 20,
+        "baseline": 25,
+        "task_count": 4,
+        "total": 100,
+        "label": "20 / 20 / 100"
+      },
+      "models": [
+        {
+          "id": "claude-haiku-4-5",
+          "label": "Haiku-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.8108506182952595,
+          "adapt_mean": 0.8871809324654174,
+          "baseline_mean": 0.9171922412825362
+        },
+        {
+          "id": "claude-sonnet-4-5",
+          "label": "Sonnet-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.8295532983725631,
+          "adapt_mean": 0.9164832006282266,
+          "baseline_mean": 0.8656807266116109
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "label": "Sonnet-4.6",
+          "n_runs": 5.0,
+          "shared_mean": 0.8469403361319605,
+          "adapt_mean": 0.9237231685613025,
+          "baseline_mean": 0.8803452173408536
+        },
+        {
+          "id": "claude-opus-4-5",
+          "label": "Opus-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.7713979148981842,
+          "adapt_mean": 0.8771397372260461,
+          "baseline_mean": 0.8603727236166321
+        },
+        {
+          "id": "claude-opus-4-6",
+          "label": "Opus-4.6",
+          "n_runs": 5.0,
+          "shared_mean": 0.9149085486125703,
+          "adapt_mean": 0.95429687849766,
+          "baseline_mean": 0.9496996417903538
+        }
+      ],
+      "shared_mean": 0.8347301432621075,
+      "shared_std_across_models": 0.05288115940402352,
+      "adapt_mean": 0.9117647834757305,
+      "adapt_std_across_models": 0.030730705733534237,
+      "baseline_mean": 0.8946581101283974,
+      "baseline_std_across_models": 0.0379387422638583,
+      "adapt_minus_baseline_mean": 0.01710667334733318,
+      "model_count": 5
+    },
+    {
+      "budget": {
+        "shared": 40,
+        "adapt": 15,
+        "baseline": 25,
+        "task_count": 4,
+        "total": 100,
+        "label": "40 / 15 / 100"
+      },
+      "models": [
+        {
+          "id": "claude-haiku-4-5",
+          "label": "Haiku-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.886576926841998,
+          "adapt_mean": 0.9487921567146345,
+          "baseline_mean": 0.8877713575037639
+        },
+        {
+          "id": "claude-sonnet-4-5",
+          "label": "Sonnet-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.8618557642223215,
+          "adapt_mean": 0.9167381199819411,
+          "baseline_mean": 0.8908566816723505
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "label": "Sonnet-4.6",
+          "n_runs": 5.0,
+          "shared_mean": 0.9462669727924446,
+          "adapt_mean": 0.9725511073974793,
+          "baseline_mean": 0.9005164844142486
+        },
+        {
+          "id": "claude-opus-4-5",
+          "label": "Opus-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.8773363017453233,
+          "adapt_mean": 0.9422728541283156,
+          "baseline_mean": 0.9137155164835553
+        },
+        {
+          "id": "claude-opus-4-6",
+          "label": "Opus-4.6",
+          "n_runs": 10.0,
+          "shared_mean": 0.9318788923203692,
+          "adapt_mean": 0.9577815344978845,
+          "baseline_mean": 0.8975740327434153
+        }
+      ],
+      "shared_mean": 0.9007829715844913,
+      "shared_std_across_models": 0.03640960092848845,
+      "adapt_mean": 0.9476271545440509,
+      "adapt_std_across_models": 0.020666839848325628,
+      "baseline_mean": 0.8980868145634668,
+      "baseline_std_across_models": 0.010113184963940973,
+      "adapt_minus_baseline_mean": 0.04954033998058405,
+      "model_count": 5
+    },
+    {
+      "budget": {
+        "shared": 60,
+        "adapt": 10,
+        "baseline": 25,
+        "task_count": 4,
+        "total": 100,
+        "label": "60 / 10 / 100"
+      },
+      "models": [
+        {
+          "id": "claude-haiku-4-5",
+          "label": "Haiku-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.8981391580755428,
+          "adapt_mean": 0.92957548996922,
+          "baseline_mean": 0.8958797538708027
+        },
+        {
+          "id": "claude-sonnet-4-5",
+          "label": "Sonnet-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.8750432048169143,
+          "adapt_mean": 0.9111779251946526,
+          "baseline_mean": 0.8913010997436347
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "label": "Sonnet-4.6",
+          "n_runs": 5.0,
+          "shared_mean": 0.9480354795435071,
+          "adapt_mean": 0.9702994776746806,
+          "baseline_mean": 0.8949194102458791
+        },
+        {
+          "id": "claude-opus-4-5",
+          "label": "Opus-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.8619998591565989,
+          "adapt_mean": 0.9156070331588836,
+          "baseline_mean": 0.8841499104137714
+        },
+        {
+          "id": "claude-opus-4-6",
+          "label": "Opus-4.6",
+          "n_runs": 10.0,
+          "shared_mean": 0.9595600910367086,
+          "adapt_mean": 0.9827961715026745,
+          "baseline_mean": 0.9295860921245185
+        }
+      ],
+      "shared_mean": 0.9085555585258543,
+      "shared_std_across_models": 0.043471654251436447,
+      "adapt_mean": 0.9418912195000223,
+      "adapt_std_across_models": 0.032657641997843156,
+      "baseline_mean": 0.8991672532797212,
+      "baseline_std_across_models": 0.017617849880705697,
+      "adapt_minus_baseline_mean": 0.04272396622030106,
+      "model_count": 5
+    },
+    {
+      "budget": {
+        "shared": 80,
+        "adapt": 5,
+        "baseline": 25,
+        "task_count": 4,
+        "total": 100,
+        "label": "80 / 5 / 100"
+      },
+      "models": [
+        {
+          "id": "claude-haiku-4-5",
+          "label": "Haiku-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.8918796546015543,
+          "adapt_mean": 0.9110386054955637,
+          "baseline_mean": 0.9001769023199074
+        },
+        {
+          "id": "claude-sonnet-4-5",
+          "label": "Sonnet-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.9199112777053227,
+          "adapt_mean": 0.9461782753453406,
+          "baseline_mean": 0.877284735123105
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "label": "Sonnet-4.6",
+          "n_runs": 5.0,
+          "shared_mean": 0.9434317284651824,
+          "adapt_mean": 0.9537437129084679,
+          "baseline_mean": 0.9034359832648147
+        },
+        {
+          "id": "claude-opus-4-5",
+          "label": "Opus-4.5",
+          "n_runs": 5.0,
+          "shared_mean": 0.8993693175692206,
+          "adapt_mean": 0.9272670771118703,
+          "baseline_mean": 0.8825640888238674
+        },
+        {
+          "id": "claude-opus-4-6",
+          "label": "Opus-4.6",
+          "n_runs": 5.0,
+          "shared_mean": 0.9570899884397116,
+          "adapt_mean": 0.9623744582121152,
+          "baseline_mean": 0.9648185554590478
+        }
+      ],
+      "shared_mean": 0.9223363933561982,
+      "shared_std_across_models": 0.027900744731470317,
+      "adapt_mean": 0.9401204258146716,
+      "adapt_std_across_models": 0.020787582207121725,
+      "baseline_mean": 0.9056560529981486,
+      "baseline_std_across_models": 0.03490459134055539,
+      "adapt_minus_baseline_mean": 0.03446437281652304,
+      "model_count": 5
+    }
+  ]
+}

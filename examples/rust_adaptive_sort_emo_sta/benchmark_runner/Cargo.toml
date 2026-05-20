@@ -1,0 +1,4 @@
+[package]
+name = "rust_adaptive_sort_emo_sta_benchmark"
+version = "0.1.0"
+edition = "2021"

@@ -1,0 +1,16 @@
+family: rust_adaptive_sort
+initial_program: ../../examples/rust_adaptive_sort_emo_sta/initial_program.rs
+evaluation_file: ../../examples/rust_adaptive_sort_emo_sta/evaluator.py
+base_config: ../../examples/rust_adaptive_sort_emo_sta/config.yaml
+output_root: ../results/rust_adaptive_sort
+manifest_label: rust_adaptive_sort
+default_shared_iterations: 12
+default_adaptation_iterations: 12
+default_baseline_iterations: 15
+wandb:
+  enabled: true
+  project: openevolve-emo-sta
+  single_run: true
+  log_best_program_artifact: true
+  log_checkpoint_artifact: false
+  log_code: false

@@ -1,0 +1,105 @@
+# Rectangle circle packing EMO-STA configuration for OpenEvolve
+
+max_iterations: 15
+checkpoint_interval: 15
+log_level: "INFO"
+random_seed: 123
+language: "python"
+file_suffix: ".py"
+
+diff_based_evolution: false
+max_code_length: 32000
+
+llm:
+  api_base: "http://127.0.0.1:4000"
+  api_key: "litellm"
+  primary_model: "claude-sonnet-4-6"
+  primary_model_weight: 1.0
+  secondary_model: null
+  secondary_model_weight: 0.0
+  temperature: 0.7
+  max_tokens: 8192
+  timeout: 180
+  retries: 3
+
+prompt:
+  system_message: |
+    You are an expert mathematician specializing in circle packing and computational geometry.
+
+    Your task is to improve a generic constructor/optimizer for packing n circles of varying radii inside a rectangle of perimeter 4, maximizing the sum of their radii.
+
+    The evolving code must preserve these exact function signatures:
+
+    def construct_packing(n: int):
+        ...
+        return centers, radii, alpha, sum_radii
+
+    def run_packing(n: int):
+        return construct_packing(n)
+
+    In this family:
+    - alpha is the rectangle width
+    - rectangle height is 2 - alpha
+    - alpha must satisfy 0 < alpha <= 1
+    - the evaluator will call your code for multiple related tasks with:
+      n in {20, 21, 22, 23}
+
+    Pinned public scoring anchors:
+    - n=20: 2.305
+    - n=21: 2.365
+    - n=22: 2.425
+    - n=23: 2.484
+
+    Constraints:
+    - centers must have shape (n, 2)
+    - radii must have shape (n,)
+    - all circles must lie fully inside the rectangle [0, alpha] x [0, 2 - alpha]
+    - circles must not overlap
+    - keep all outputs finite
+    - keep the algorithm deterministic
+
+    Guidance:
+    - Favor reusable geometric construction and optimization routines parameterized by n
+    - The rectangle aspect ratio is also part of the search through alpha
+    - Avoid implementing four completely separate hardcoded exact layouts as the main strategy
+    - Explicit constructive geometry, symmetry-breaking, corner/edge utilization, ring/grid hybrids, and local continuous optimization are all reasonable
+    - Computing radii from fixed centers is acceptable; jointly optimizing centers, radii, and alpha is also acceptable
+    - SciPy-based constrained or unconstrained optimization is allowed if it remains reliable enough for the timeout budget
+    - Good initial placements matter
+    - The shorter side is alpha, so radii cannot exceed alpha / 2
+    - Focus on valid packings first, then improve sum of radii
+
+    Do not use plotting code inside the evolved block.
+    Do not print debugging output from the evolved block.
+    Write all improvements only between # EVOLVE-BLOCK-START and # EVOLVE-BLOCK-END.
+
+  num_top_programs: 3
+  num_diverse_programs: 2
+  use_template_stochasticity: true
+  include_artifacts: true
+  max_artifact_bytes: 20480
+
+database:
+  population_size: 80
+  archive_size: 40
+  num_islands: 4
+  elite_selection_ratio: 0.1
+  exploration_ratio: 0.3
+  exploitation_ratio: 0.6
+  feature_dimensions: ["radius_variance", "spatial_spread"]
+  feature_bins: 10
+  migration_interval: 15
+  migration_rate: 0.15
+
+evaluator:
+  timeout: 600
+  max_retries: 2
+  cascade_evaluation: true
+  cascade_thresholds: [0.4, 0.75]
+  parallel_evaluations: 2
+  use_llm_feedback: false
+  enable_artifacts: true
+
+early_stopping_patience: 100
+convergence_threshold: 0.001
+early_stopping_metric: "combined_score"

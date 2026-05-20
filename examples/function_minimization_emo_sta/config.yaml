@@ -1,0 +1,66 @@
+# Function minimization EMO-STA configuration for OpenEvolve
+
+max_iterations: 20
+checkpoint_interval: 10
+log_level: "INFO"
+random_seed: 123
+language: "python"
+file_suffix: ".py"
+
+diff_based_evolution: false
+max_code_length: 16000
+
+llm:
+  api_base: "http://127.0.0.1:4000"
+  api_key: "litellm"
+  primary_model: "claude-sonnet-4-6"
+  primary_model_weight: 1.0
+  secondary_model: null
+  secondary_model_weight: 0.0
+  temperature: 0.8
+  max_tokens: 4096
+  timeout: 60
+  retries: 3
+
+prompt:
+  system_message: |
+    You are improving a generic derivative-free 2D minimization algorithm for a
+    multi-task shared-then-adapt workflow.
+
+    Important requirements:
+    - Preserve the function signatures exactly:
+      - search_algorithm(objective_fn, bounds, iterations=1000, seed=0)
+      - run_search(objective_fn, bounds, iterations=1000, seed=0)
+    - The same evolving program must work across multiple objective landscapes.
+    - Do not hardcode any single benchmark function, optimum, task ID, or bounds.
+    - Use only pure Python and NumPy.
+    - Improve generic optimization behavior across multiple landscapes.
+
+  num_top_programs: 5
+  num_diverse_programs: 3
+  include_artifacts: false
+  max_artifact_bytes: 16384
+
+database:
+  population_size: 40
+  archive_size: 16
+  num_islands: 4
+  elite_selection_ratio: 0.15
+  exploration_ratio: 0.6
+  exploitation_ratio: 0.25
+  feature_dimensions: ["combined_score", "complexity", "diversity"]
+  feature_bins: 5
+  migration_interval: 3
+  migration_rate: 0.3
+
+evaluator:
+  timeout: 30
+  parallel_evaluations: 4
+  cascade_evaluation: true
+  cascade_thresholds: [0.45]
+  enable_artifacts: true
+  use_llm_feedback: false
+
+early_stopping_patience: 100
+convergence_threshold: 0.001
+early_stopping_metric: "combined_score"

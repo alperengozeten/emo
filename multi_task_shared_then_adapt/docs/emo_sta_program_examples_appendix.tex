@@ -1,0 +1,260 @@
+% Appendix-ready LaTeX snippet for illustrative EMO-STA program examples.
+%
+% Optional preamble support:
+% \usepackage{listings}
+% \usepackage{xcolor}
+% \lstset{
+%   basicstyle=\ttfamily\footnotesize,
+%   columns=fullflexible,
+%   keepspaces=true,
+%   frame=single,
+%   breaklines=true,
+%   showstringspaces=false,
+%   aboveskip=4pt,
+%   belowskip=4pt,
+% }
+
+\subsection{Illustrative EMO-STA Program Examples}
+\label{app:emo-sta-program-examples}
+
+Table~\ref{tab:emo-sta-program-examples} gives two concrete examples from completed EMO-STA runs. We intentionally omit the K-module family here and focus on the two examples that are easiest to interpret in a paper appendix. The first example shows a case where the shared archive already contains a near-task-optimal solver, so adaptation mainly acts as selection from the shared checkpoint. The second example shows the full shared-then-adapt behavior: a strong shared scaffold is selected first, then lightly retuned during adaptation to outperform a direct single-task baseline.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{lcccc}
+\hline
+Example & Run setting & \shortstack{STA Best-Shared\\(Before Adaptation)} & Adapt & Single-task \\
+\hline
+Function minimization / Rastrigin
+& Opus-4.6, $40/15/100$, seed $45$
+& $0.9978$
+& $0.9978$
+& $0.4334$ \\
+Signal processing / Step changes
+& Opus-4.6, $60/10/100$, seed $43$
+& $0.8109$
+& $0.8478$
+& $0.6611$ \\
+\hline
+\end{tabular}
+\caption{Representative EMO-STA program examples for the appendix. The run setting column reports Shared / Adapt / Total iteration budgets, where Total equals the number of tasks times the single-task baseline budget.}
+\label{tab:emo-sta-program-examples}
+\end{table}
+
+\paragraph{Function Minimization: Rastrigin.}
+We use the Opus-4.6 run with Shared / Adapt / Total budgets $40/15/100$ and seed $45$. In this case, the main gain comes from the shared archive itself rather than from additional adaptation steps. The shared stage evolves a substantially richer solver with three clear phases: stratified global sampling, multi-start Nelder--Mead refinement, and adaptive local search with basin hopping. Re-evaluating the shared checkpoint for the Rastrigin subtask yields a spawned program with score $0.9978$, and the adapted run makes no further improvement. By contrast, the direct single-task baseline only reaches $0.4334$. This example is useful because it shows that EMO-STA can help even when the entire advantage comes from \emph{shared discovery plus task-specific selection from the shared checkpoint}.
+
+\begin{lstlisting}[language=Python,caption={Abridged excerpt of the shared-derived Rastrigin solver selected from the EMO-STA archive.},label={lst:emosta-rastrigin-shared}]
+def search_algorithm(objective_fn, bounds, iterations=1000, seed=0):
+    rng = np.random.default_rng(seed)
+    (x_min, x_max), (y_min, y_max) = bounds
+    N = max(1, int(iterations))
+    rx, ry = x_max - x_min, y_max - y_min
+
+    best = [None, None, float('inf')]
+    evals = [0]
+
+    def ev(x, y):
+        x = float(np.clip(x, x_min, x_max))
+        y = float(np.clip(y, y_min, y_max))
+        if evals[0] >= N:
+            return float('inf')
+        v = float(objective_fn(x, y))
+        evals[0] += 1
+        if v < best[2]:
+            best[0], best[1], best[2] = x, y, v
+        return v
+
+    # Phase 1: Stratified grid sampling (~25% budget)
+    n_init = min(max(25, N // 4), N)
+    gs = int(np.ceil(np.sqrt(n_init)))
+    candidates = []
+    for i in range(gs):
+        for j in range(gs):
+            if evals[0] >= n_init:
+                break
+            x = x_min + (i + rng.uniform(0.1, 0.9)) / gs * rx
+            y = y_min + (j + rng.uniform(0.1, 0.9)) / gs * ry
+            v = ev(x, y)
+            candidates.append((v, x, y))
+
+    candidates.sort()
+    n_starts = min(6, len(candidates))
+    starts = [(c[1], c[2]) for c in candidates[:n_starts]]
+
+    # Phase 2: Nelder-Mead from top starts
+    def nelder_mead(sx, sy, budget, scale=0.1):
+        h = min(rx, ry) * scale
+        s = [np.array([sx, sy]), np.array([sx + h, sy]), np.array([sx, sy + h])]
+        sv = [ev(p[0], p[1]) for p in s]
+        # ... inner Nelder-Mead updates ...
+
+    nm_budget = max(10, (N - evals[0]) // (n_starts + 2))
+    for sx, sy in starts:
+        if evals[0] >= N:
+            break
+        nelder_mead(sx, sy, nm_budget)
+
+    # Phase 3: Adaptive local search around best
+    sigma = min(rx, ry) * 0.05
+    no_imp = 0
+    while evals[0] < N:
+        old = best[2]
+        nx = best[0] + rng.normal() * sigma
+        ny = best[1] + rng.normal() * sigma
+        ev(nx, ny)
+        if best[2] < old:
+            no_imp = 0
+            sigma *= 1.2
+            sigma = min(sigma, min(rx, ry) * 0.3)
+        else:
+            no_imp += 1
+            sigma *= 0.97
+        if no_imp > 50:
+            sigma = min(rx, ry) * 0.2
+            no_imp = 0
+            ev(rng.uniform(x_min, x_max), rng.uniform(y_min, y_max))
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python,caption={Abridged excerpt of the direct single-task Rastrigin baseline.},label={lst:emosta-rastrigin-baseline}]
+def search_algorithm(objective_fn, bounds, iterations=1000, seed=0):
+    rng = np.random.default_rng(seed)
+    (x_min, x_max), (y_min, y_max) = bounds
+    N = max(1, int(iterations))
+
+    # Phase 1: Latin hypercube-like initial sampling (~20% of budget)
+    n_init = max(10, N // 5)
+    best_x, best_y, best_val = None, None, float('inf')
+
+    # Grid + random hybrid for initial exploration
+    g = max(3, int(np.sqrt(n_init // 2)))
+    xs = np.linspace(x_min, x_max, g + 2)[1:-1]
+    ys = np.linspace(y_min, y_max, g + 2)[1:-1]
+    evals = 0
+    for xi in xs:
+        for yi in ys:
+            if evals >= n_init:
+                break
+            v = float(objective_fn(float(xi), float(yi)))
+            evals += 1
+            if v < best_val:
+                best_x, best_y, best_val = float(xi), float(yi), v
+
+    while evals < n_init:
+        cx = float(rng.uniform(x_min, x_max))
+        cy = float(rng.uniform(y_min, y_max))
+        v = float(objective_fn(cx, cy))
+        evals += 1
+        if v < best_val:
+            best_x, best_y, best_val = cx, cy, v
+
+    # Phase 2: Adaptive local search with restarts
+    sx = (x_max - x_min) * 0.3
+    sy = (y_max - y_min) * 0.3
+    sigma = np.array([sx, sy])
+    no_improve = 0
+    restart_thresh = max(20, (N - evals) // 10)
+
+    while evals < N:
+        cx = float(np.clip(best_x + rng.normal() * sigma[0], x_min, x_max))
+        cy = float(np.clip(best_y + rng.normal() * sigma[1], y_min, y_max))
+        v = float(objective_fn(cx, cy))
+        evals += 1
+        # ... shrink/expand sigma and periodic random restarts ...
+\end{lstlisting}
+
+\paragraph{Signal Processing: Step Changes.}
+We use the Opus-4.6 run with Shared / Adapt / Total budgets $60/10/100$ and seed $43$. This example shows the intended EMO-STA mechanism more directly. The shared stage evolves a generic multi-pass adaptive smoothing scaffold. Re-evaluating the shared checkpoint for the step-changes task yields a spawned program with score $0.8109$, already well above the direct single-task baseline at $0.6611$. Adaptation then keeps the same overall scaffold but retunes the adaptive EMA thresholds and blend weights, improving the task-specific score to $0.8478$. The key behavioral improvement is fewer false reversals and fewer slope changes on the step task, which is exactly the kind of light task-local calibration that the shared-then-adapt workflow is designed to enable.
+
+\begin{lstlisting}[language=Python,caption={Abridged excerpt of the spawned shared-derived scaffold for the step-changes task.},label={lst:emosta-step-spawn}]
+# Robust noise scale estimate from second differences
+if m > 4:
+    d2 = np.abs(np.diff(out, n=2))
+    global_mad = np.median(d2) * 1.4826 + 1e-10
+else:
+    global_mad = np.std(out) * 0.5 + 1e-10
+
+def adaptive_ema(src, direction='forward', lo=0.04, hi=0.7,
+                 thresh_lo=0.6, thresh_hi=3.0):
+    # ... adaptive forward/backward EMA ...
+
+# Pass 2: strong forward smoother
+fwd = adaptive_ema(out, 'forward', lo=0.04, hi=0.70,
+                   thresh_lo=0.6, thresh_hi=3.0)
+# Pass 3: backward on forward
+bwd = adaptive_ema(fwd, 'backward', lo=0.04, hi=0.70,
+                   thresh_lo=0.6, thresh_hi=3.0)
+smoothed = 0.52 * fwd + 0.48 * bwd
+
+# Pass 4: second forward pass - tighter smoothing
+f2 = adaptive_ema(smoothed, 'forward', lo=0.03, hi=0.55,
+                  thresh_lo=0.5, thresh_hi=2.5)
+b2 = adaptive_ema(f2, 'backward', lo=0.10, hi=0.50,
+                  thresh_lo=0.5, thresh_hi=2.5)
+result = 0.55 * f2 + 0.45 * b2
+
+# Pass 6: final very light forward pass for smoothness
+result = adaptive_ema(result, 'forward', lo=0.06, hi=0.60,
+                      thresh_lo=0.5, thresh_hi=2.5)
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python,caption={Abridged excerpt of the task-specific retuning after EMO-STA adaptation on the step-changes task.},label={lst:emosta-step-adapt}]
+# Robust noise scale from second differences (MAD-based)
+if m > 4:
+    d2 = np.abs(np.diff(out, n=2))
+    ns = np.median(d2) * 1.4826 + 1e-10
+else:
+    ns = np.std(out) * 0.5 + 1e-10
+
+def aema(src, direction, lo=0.04, hi=0.70, tlo=0.6, thi=3.0):
+    # ... same forward/backward adaptive EMA scaffold ...
+
+# Pass 2: strong forward smoother
+fwd = aema(out, 'f', lo=0.03, hi=0.72, tlo=0.5, thi=3.0)
+# Pass 3: backward on forward result
+bwd = aema(fwd, 'b', lo=0.03, hi=0.72, tlo=0.5, thi=3.0)
+smoothed = 0.52 * fwd + 0.48 * bwd
+
+# Pass 4: tighter forward
+f2 = aema(smoothed, 'f', lo=0.025, hi=0.55, tlo=0.45, thi=2.5)
+b2 = aema(f2, 'b', lo=0.08, hi=0.50, tlo=0.45, thi=2.5)
+result = 0.54 * f2 + 0.46 * b2
+
+# Pass 6: final light forward for smoothness
+result = aema(result, 'f', lo=0.05, hi=0.58, tlo=0.5, thi=2.5)
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python,caption={Abridged excerpt of the direct single-task baseline for the step-changes task.},label={lst:emosta-step-baseline}]
+# Noise estimation from MAD of first differences
+diffs = np.abs(np.diff(signal_array))
+noise_est = max(np.median(diffs) * 1.4826 / np.sqrt(2), 0.01)
+step_thresh = noise_est * 3.0
+
+# Step 1: Causal robust level estimation using trimmed mean in windows
+level = np.empty(output_length, dtype=float)
+trim_frac = 0.15
+trim_count = max(1, int(window * trim_frac))
+for idx in range(output_length):
+    seg = signal_array[idx: idx + window]
+    sorted_seg = np.sort(seg)
+    trimmed = sorted_seg[trim_count: window - trim_count]
+    level[idx] = np.mean(trimmed)
+
+# Step 2: Causal step-aware hold filter
+held = np.empty(output_length, dtype=float)
+held[0] = level[0]
+hold_level = level[0]
+confirmation_count = 0
+confirm_needed = max(2, window // 8)
+# ... hold-level update logic ...
+
+# Step 3: Final light smoothing pass to remove micro-jitter
+smoothed = np.empty(output_length, dtype=float)
+smoothed[0] = held[0]
+alpha_smooth = 0.15
+alpha_step = 0.9
+# ... final smoothing loop ...
+\end{lstlisting}

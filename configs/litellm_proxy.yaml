@@ -1,0 +1,36 @@
+litellm_settings:
+  drop_params: true
+
+model_list:
+  - model_name: "claude-sonnet-4-6"
+    litellm_params:
+      model: "bedrock/converse/us.anthropic.claude-sonnet-4-6"
+      # Bedrock API keys are region-scoped. The launcher defaults this to
+      # AWS_DEFAULT_REGION or us-east-1 when AWS_REGION_NAME is unset.
+      aws_region_name: os.environ/AWS_REGION_NAME
+      api_key: os.environ/AWS_BEARER_TOKEN_BEDROCK
+  - model_name: "claude-haiku-4-5"
+    litellm_params:
+      model: "bedrock/converse/us.anthropic.claude-haiku-4-5-20251001-v1:0"
+      aws_region_name: os.environ/AWS_REGION_NAME
+      api_key: os.environ/AWS_BEARER_TOKEN_BEDROCK
+  - model_name: "claude-sonnet-4-5"
+    litellm_params:
+      model: "bedrock/converse/us.anthropic.claude-sonnet-4-5-20250929-v1:0"
+      aws_region_name: os.environ/AWS_REGION_NAME
+      api_key: os.environ/AWS_BEARER_TOKEN_BEDROCK
+  - model_name: "claude-opus-4-5-20251101"
+    litellm_params:
+      model: "bedrock/converse/us.anthropic.claude-opus-4-5-20251101-v1:0"
+      aws_region_name: os.environ/AWS_REGION_NAME
+      api_key: os.environ/AWS_BEARER_TOKEN_BEDROCK
+  - model_name: "claude-opus-4-5"
+    litellm_params:
+      model: "bedrock/converse/us.anthropic.claude-opus-4-5-20251101-v1:0"
+      aws_region_name: os.environ/AWS_REGION_NAME
+      api_key: os.environ/AWS_BEARER_TOKEN_BEDROCK
+  - model_name: "claude-opus-4-6"
+    litellm_params:
+      model: "bedrock/converse/us.anthropic.claude-opus-4-6-v1"
+      aws_region_name: os.environ/AWS_REGION_NAME
+      api_key: os.environ/AWS_BEARER_TOKEN_BEDROCK

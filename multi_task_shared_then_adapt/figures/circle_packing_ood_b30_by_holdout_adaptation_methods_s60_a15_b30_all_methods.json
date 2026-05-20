@@ -1,0 +1,293 @@
+{
+  "family": "circle_packing",
+  "manifest": "multi_task_shared_then_adapt/configs/",
+  "results_dir": "multi_task_shared_then_adapt/results/circle_packing",
+  "baseline_budget": 30,
+  "baseline_reference_prefix": "s60-a15-b30",
+  "task_count": 4,
+  "categories": [
+    {
+      "id": "cp_n21",
+      "label": "N = 21"
+    },
+    {
+      "id": "cp_n23",
+      "label": "N = 23"
+    },
+    {
+      "id": "cp_n25",
+      "label": "N = 25"
+    },
+    {
+      "id": "average",
+      "label": "Average"
+    }
+  ],
+  "methods": [
+    {
+      "id": "baseline",
+      "label": "Single-task",
+      "hatch": "",
+      "legend_hatch": ""
+    },
+    {
+      "id": "adapt",
+      "label": "STA Warmstart",
+      "hatch": "//",
+      "legend_hatch": "//"
+    },
+    {
+      "id": "best_local",
+      "label": "STA Best-Local Program",
+      "hatch": "",
+      "legend_hatch": ""
+    },
+    {
+      "id": "best_shared",
+      "label": "STA Best-Shared Program",
+      "hatch": "xx",
+      "legend_hatch": "xx"
+    }
+  ],
+  "baseline_reference": {
+    "setting_prefix": "s60-a15-b30",
+    "budget": {
+      "shared": 60,
+      "adapt": 15,
+      "baseline": 30,
+      "task_count": 4,
+      "total": 120,
+      "label": "60 / 15 / 120"
+    },
+    "label": "0 / 30 / 120",
+    "values": [
+      0.8926243773407293,
+      0.893932499709486,
+      0.8943583877877359,
+      0.8936384216126504
+    ]
+  },
+  "budgets": [
+    {
+      "setting_prefix": "s60-a15-b30",
+      "budget": {
+        "shared": 60,
+        "adapt": 15,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "60 / 15 / 120"
+      },
+      "model_count": 5,
+      "models": {
+        "claude-haiku-4-5": {
+          "run_count": 5,
+          "runs": [
+            "run_01_seed_42",
+            "run_02_seed_43",
+            "run_03_seed_44",
+            "run_04_seed_45",
+            "run_05_seed_46"
+          ],
+          "series": {
+            "baseline": [
+              0.8567968384665209,
+              0.8515830796335058,
+              0.8433180129637534,
+              0.8505659770212601
+            ],
+            "adapt": [
+              0.920318536426916,
+              0.9228596696800271,
+              0.9065822418575227,
+              0.9165868159881553
+            ],
+            "best_local": [
+              0.9188997424765303,
+              0.9212317433356615,
+              0.9029163704187452,
+              0.9143492854103122
+            ],
+            "best_shared": [
+              0.9269255074639868,
+              0.9231013763408109,
+              0.9205762819179071,
+              0.9235343885742349
+            ]
+          }
+        },
+        "claude-sonnet-4-5": {
+          "run_count": 5,
+          "runs": [
+            "run_01_seed_42",
+            "run_02_seed_43",
+            "run_03_seed_44",
+            "run_04_seed_45",
+            "run_05_seed_46"
+          ],
+          "series": {
+            "baseline": [
+              0.8343664926962218,
+              0.8260882788408598,
+              0.9102508213146996,
+              0.856901864283927
+            ],
+            "adapt": [
+              0.953570884557322,
+              0.9208421243010074,
+              0.904541211235102,
+              0.9263180733644771
+            ],
+            "best_local": [
+              0.9041778550771926,
+              0.8742079349222429,
+              0.8777834453979587,
+              0.8853897451324648
+            ],
+            "best_shared": [
+              0.900991224165842,
+              0.9154991656345034,
+              0.9008468098553815,
+              0.905779066551909
+            ]
+          }
+        },
+        "claude-sonnet-4-6": {
+          "run_count": 5,
+          "runs": [
+            "run_01_seed_42",
+            "run_02_seed_43",
+            "run_03_seed_44",
+            "run_04_seed_45",
+            "run_05_seed_46"
+          ],
+          "series": {
+            "baseline": [
+              0.9548467531609639,
+              0.9546926105936873,
+              0.8873178268236744,
+              0.9322857301927752
+            ],
+            "adapt": [
+              0.9901918685016398,
+              0.990729977358488,
+              0.9911496687747057,
+              0.9906905048782777
+            ],
+            "best_local": [
+              0.9923377018070386,
+              0.994754486887967,
+              0.9919546944549544,
+              0.9930156277166533
+            ],
+            "best_shared": [
+              0.9927042622943049,
+              0.9957388105520184,
+              0.9941226265797225,
+              0.9941885664753485
+            ]
+          }
+        },
+        "claude-opus-4-5": {
+          "run_count": 5,
+          "runs": [
+            "run_01_seed_42",
+            "run_02_seed_43",
+            "run_03_seed_44",
+            "run_04_seed_45",
+            "run_05_seed_46"
+          ],
+          "series": {
+            "baseline": [
+              0.8823800899906524,
+              0.8855282849478033,
+              0.8779522478040548,
+              0.8819535409141702
+            ],
+            "adapt": [
+              0.8993250692758823,
+              0.9189755213835517,
+              0.8148337986042454,
+              0.877711463087893
+            ],
+            "best_local": [
+              0.9084567907755696,
+              0.9255803107874463,
+              0.9284014079315265,
+              0.9208128364981807
+            ],
+            "best_shared": [
+              0.9178584235253121,
+              0.917974011590043,
+              0.9096024297295401,
+              0.9151449549482983
+            ]
+          }
+        },
+        "claude-opus-4-6": {
+          "run_count": 5,
+          "runs": [
+            "run_01_seed_42",
+            "run_02_seed_43",
+            "run_03_seed_44",
+            "run_04_seed_45",
+            "run_05_seed_46"
+          ],
+          "series": {
+            "baseline": [
+              0.9347317123892879,
+              0.9517702445315737,
+              0.952953030032497,
+              0.9464849956511194
+            ],
+            "adapt": [
+              0.8504035487306527,
+              0.8595254550627665,
+              0.8593925745311223,
+              0.8564405261081804
+            ],
+            "best_local": [
+              0.9687058550811765,
+              0.9746512423530955,
+              0.9766291318931779,
+              0.97332874310915
+            ],
+            "best_shared": [
+              0.9707210713786403,
+              0.9785689645950519,
+              0.9763750425093176,
+              0.97522169282767
+            ]
+          }
+        }
+      },
+      "series": {
+        "baseline": [
+          0.8926243773407293,
+          0.893932499709486,
+          0.8943583877877359,
+          0.8936384216126504
+        ],
+        "adapt": [
+          0.9227619814984825,
+          0.9225865495571682,
+          0.8952998990005396,
+          0.9135494766853967
+        ],
+        "best_local": [
+          0.9385155890435015,
+          0.9380851436572826,
+          0.9355370100192726,
+          0.9373792475733522
+        ],
+        "best_shared": [
+          0.9418400977656173,
+          0.9461764657424855,
+          0.9403046381183737,
+          0.9427737338754921
+        ]
+      }
+    }
+  ],
+  "aggregation": "Within a run, each method averages OOD scores across source tasks for each holdout N, except Shared, which uses the single persisted shared program directly. The figure keeps only runs where all requested methods have complete OOD results. It then averages comparable runs within each model and averages the resulting model means within each budget."
+}

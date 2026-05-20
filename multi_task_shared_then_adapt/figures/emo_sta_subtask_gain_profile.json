@@ -1,0 +1,297 @@
+{
+  "figure": "emo_sta_subtask_gain_profile",
+  "summary_json": "multi_task_shared_then_adapt/docs/emo_sta_results_summary.json",
+  "family_count": 5,
+  "preset": "emo_sta_table",
+  "phase_pair": "warmstart",
+  "start_label": "Spawned shared checkpoint",
+  "end_label": "After task-specific adaptation",
+  "include_families": [
+    "function_minimization",
+    "signal_processing",
+    "k_module_problem_balanced",
+    "sldbench_3d",
+    "rust_adaptive_sort"
+  ],
+  "exclude_families": [],
+  "families": [
+    {
+      "family_id": "function_minimization",
+      "family_label": "Function minimization",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=40 | adapt=15 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-opus-4-5 | shared=40 | adapt=15 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-opus-4-6 | shared=40 | adapt=15 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-sonnet-4-5 | shared=40 | adapt=15 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-sonnet-4-6 | shared=40 | adapt=15 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic"
+      ],
+      "family_mean_end_minus_baseline": 0.04719873427917483,
+      "tasks": [
+        {
+          "task_id": "fm_rastrigin_2d",
+          "task_label": "Rastrigin",
+          "start_minus_baseline_mean": 0.1326414115145781,
+          "end_minus_baseline_mean": 0.14390391561936167,
+          "end_minus_start_mean": 0.011262504104783551,
+          "wins": 21,
+          "losses": 4,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "fm_rosenbrock_2d",
+          "task_label": "Rosenbrock",
+          "start_minus_baseline_mean": 0.02444719222467129,
+          "end_minus_baseline_mean": 0.027060993502769665,
+          "end_minus_start_mean": 0.002613801278098373,
+          "wins": 18,
+          "losses": 7,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "fm_sincosxy_2d",
+          "task_label": "Oscillatory Basin",
+          "start_minus_baseline_mean": -4.5712260537138507e-05,
+          "end_minus_baseline_mean": 0.010096901919048213,
+          "end_minus_start_mean": 0.010142614179585351,
+          "wins": 15,
+          "losses": 10,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "fm_ackley_2d",
+          "task_label": "Ackley",
+          "start_minus_baseline_mean": 0.007252511907199568,
+          "end_minus_baseline_mean": 0.007733126075519765,
+          "end_minus_start_mean": 0.000480614168320197,
+          "wins": 14,
+          "losses": 11,
+          "ties": 0,
+          "comparable": 25
+        }
+      ]
+    },
+    {
+      "family_id": "signal_processing",
+      "family_label": "Signal processing",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=60 | adapt=10 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-opus-4-5 | shared=60 | adapt=10 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-opus-4-6 | shared=60 | adapt=10 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-sonnet-4-5 | shared=60 | adapt=10 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-sonnet-4-6 | shared=60 | adapt=10 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic"
+      ],
+      "family_mean_end_minus_baseline": 0.03200915543655705,
+      "tasks": [
+        {
+          "task_id": "sp_trend_sine_500_n02",
+          "task_label": "trend+sine",
+          "start_minus_baseline_mean": 0.06187510382550159,
+          "end_minus_baseline_mean": 0.06835718311664322,
+          "end_minus_start_mean": 0.006482079291141627,
+          "wins": 22,
+          "losses": 3,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "sp_multifreq_600_n03",
+          "task_label": "multi-freq",
+          "start_minus_baseline_mean": 0.025524343210538362,
+          "end_minus_baseline_mean": 0.03708919917572761,
+          "end_minus_start_mean": 0.011564855965189245,
+          "wins": 19,
+          "losses": 6,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "sp_chirp_700_n04",
+          "task_label": "chirp",
+          "start_minus_baseline_mean": 0.0063334088834242856,
+          "end_minus_baseline_mean": 0.020859896183349918,
+          "end_minus_start_mean": 0.014526487299925632,
+          "wins": 16,
+          "losses": 9,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "sp_step_800_n05",
+          "task_label": "step",
+          "start_minus_baseline_mean": -0.01614586240612351,
+          "end_minus_baseline_mean": 0.001730343270507455,
+          "end_minus_start_mean": 0.017876205676630966,
+          "wins": 13,
+          "losses": 12,
+          "ties": 0,
+          "comparable": 25
+        }
+      ]
+    },
+    {
+      "family_id": "k_module_problem_balanced",
+      "family_label": "K-module",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=40 | adapt=20 | baseline=30 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-opus-4-5 | shared=40 | adapt=20 | baseline=30 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-opus-4-6 | shared=40 | adapt=20 | baseline=30 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-sonnet-4-5 | shared=40 | adapt=20 | baseline=30 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-sonnet-4-6 | shared=40 | adapt=20 | baseline=30 | edit=full | prompts=shared:generic, adapt:generic, base:generic"
+      ],
+      "family_mean_end_minus_baseline": 0.045,
+      "tasks": [
+        {
+          "task_id": "kmb_task_b",
+          "task_label": "task b",
+          "start_minus_baseline_mean": -0.04,
+          "end_minus_baseline_mean": 0.09333333333333334,
+          "end_minus_start_mean": 0.13333333333333333,
+          "wins": 13,
+          "losses": 2,
+          "ties": 10,
+          "comparable": 25
+        },
+        {
+          "task_id": "kmb_task_c",
+          "task_label": "task c",
+          "start_minus_baseline_mean": -0.10666666666666667,
+          "end_minus_baseline_mean": 0.07333333333333333,
+          "end_minus_start_mean": 0.18,
+          "wins": 11,
+          "losses": 2,
+          "ties": 12,
+          "comparable": 25
+        },
+        {
+          "task_id": "kmb_task_d",
+          "task_label": "task d",
+          "start_minus_baseline_mean": -0.08,
+          "end_minus_baseline_mean": 0.02666666666666666,
+          "end_minus_start_mean": 0.10666666666666666,
+          "wins": 11,
+          "losses": 7,
+          "ties": 7,
+          "comparable": 25
+        },
+        {
+          "task_id": "kmb_task_a",
+          "task_label": "task a",
+          "start_minus_baseline_mean": -0.04666666666666666,
+          "end_minus_baseline_mean": -0.01333333333333333,
+          "end_minus_start_mean": 0.03333333333333333,
+          "wins": 0,
+          "losses": 2,
+          "ties": 23,
+          "comparable": 25
+        }
+      ]
+    },
+    {
+      "family_id": "sldbench_3d",
+      "family_label": "SLDBench-3D",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=60 | adapt=10 | baseline=40 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-opus-4-5 | shared=60 | adapt=10 | baseline=40 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-opus-4-6 | shared=60 | adapt=10 | baseline=40 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-sonnet-4-5 | shared=60 | adapt=10 | baseline=40 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-sonnet-4-6 | shared=60 | adapt=10 | baseline=40 | edit=full | prompts=shared:generic, adapt:generic, base:generic"
+      ],
+      "family_mean_end_minus_baseline": 0.006857148067998984,
+      "tasks": [
+        {
+          "task_id": "data_constrained_scaling_law",
+          "task_label": "data-constrained",
+          "start_minus_baseline_mean": 0.01997548343633407,
+          "end_minus_baseline_mean": 0.022661798584077193,
+          "end_minus_start_mean": 0.0026863151477431258,
+          "wins": 17,
+          "losses": 8,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "vocab_scaling_law",
+          "task_label": "vocab",
+          "start_minus_baseline_mean": -0.009979840611007594,
+          "end_minus_baseline_mean": -0.008947502448079226,
+          "end_minus_start_mean": 0.001032338162928368,
+          "wins": 7,
+          "losses": 18,
+          "ties": 0,
+          "comparable": 25
+        }
+      ]
+    },
+    {
+      "family_id": "rust_adaptive_sort",
+      "family_label": "Rust adaptive sort",
+      "group_count": 5,
+      "run_count": 25,
+      "matched_setting_labels": [
+        "model=claude-haiku-4-5 | shared=60 | adapt=10 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-opus-4-5 | shared=60 | adapt=10 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-opus-4-6 | shared=60 | adapt=10 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-sonnet-4-5 | shared=60 | adapt=10 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic",
+        "model=claude-sonnet-4-6 | shared=60 | adapt=10 | baseline=25 | edit=full | prompts=shared:generic, adapt:generic, base:generic"
+      ],
+      "family_mean_end_minus_baseline": 0.02290982086205873,
+      "tasks": [
+        {
+          "task_id": "ras_duplicates",
+          "task_label": "duplicates",
+          "start_minus_baseline_mean": 0.03984510095184746,
+          "end_minus_baseline_mean": 0.04130266420340241,
+          "end_minus_start_mean": 0.0014575632515549475,
+          "wins": 14,
+          "losses": 11,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "ras_random",
+          "task_label": "random",
+          "start_minus_baseline_mean": 0.03286756631181064,
+          "end_minus_baseline_mean": 0.033389241551520635,
+          "end_minus_start_mean": 0.0005216752397099911,
+          "wins": 12,
+          "losses": 13,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "ras_nearly_sorted",
+          "task_label": "nearly sorted",
+          "start_minus_baseline_mean": 0.02434279154736843,
+          "end_minus_baseline_mean": 0.027066203163628032,
+          "end_minus_start_mean": 0.0027234116162596013,
+          "wins": 18,
+          "losses": 7,
+          "ties": 0,
+          "comparable": 25
+        },
+        {
+          "task_id": "ras_reverse_sorted",
+          "task_label": "reverse sorted",
+          "start_minus_baseline_mean": -0.017938509804426205,
+          "end_minus_baseline_mean": -0.010118825470316156,
+          "end_minus_start_mean": 0.007819684334110049,
+          "wins": 13,
+          "losses": 12,
+          "ties": 0,
+          "comparable": 25
+        }
+      ]
+    }
+  ]
+}

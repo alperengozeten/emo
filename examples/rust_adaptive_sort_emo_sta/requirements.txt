@@ -1,0 +1,5 @@
+# Python-side evaluator uses only the standard library.
+#
+# System requirements:
+# - Rust toolchain
+# - cargo

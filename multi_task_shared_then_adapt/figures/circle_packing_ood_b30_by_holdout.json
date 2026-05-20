@@ -1,0 +1,840 @@
+{
+  "results_dir": "multi_task_shared_then_adapt/results/circle_packing",
+  "baseline_budget": 30,
+  "baseline_reference_prefix": "s60-a15-b30",
+  "setting_prefixes": [
+    "s20-a25-b30",
+    "s40-a20-b30",
+    "s60-a15-b30",
+    "s80-a10-b30"
+  ],
+  "categories": [
+    {
+      "id": "cp_n21",
+      "label": "N = 21"
+    },
+    {
+      "id": "cp_n23",
+      "label": "N = 23"
+    },
+    {
+      "id": "cp_n25",
+      "label": "N = 25"
+    },
+    {
+      "id": "average",
+      "label": "Average"
+    }
+  ],
+  "baseline_reference": {
+    "label": "Single-task 0 / 30 / 120",
+    "values": [
+      0.8926481599034315,
+      0.8940174315357211,
+      0.894336865349801,
+      0.8936674855963178
+    ],
+    "source_setting_prefix": "s60-a15-b30",
+    "aggregation": "For each holdout N, use the single-task holdout score from the specified baseline reference setting so this figure is consistent with the original selected-budget OOD figure."
+  },
+  "adapt_by_budget": [
+    {
+      "setting_prefix": "s20-a25-b30",
+      "budget": {
+        "shared": 20,
+        "adapt": 25,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "20 / 25 / 120"
+      },
+      "values": [
+        0.7767154883869726,
+        0.6991480011271347,
+        0.7038042556400156,
+        0.7265559150513743
+      ],
+      "model_count": 5,
+      "models": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-5",
+        "claude-sonnet-4-6",
+        "claude-opus-4-5",
+        "claude-opus-4-6"
+      ]
+    },
+    {
+      "setting_prefix": "s40-a20-b30",
+      "budget": {
+        "shared": 40,
+        "adapt": 20,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "40 / 20 / 120"
+      },
+      "values": [
+        0.8387182313752085,
+        0.8564866612755596,
+        0.8364573524843607,
+        0.8438874150450429
+      ],
+      "model_count": 5,
+      "models": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-5",
+        "claude-sonnet-4-6",
+        "claude-opus-4-5",
+        "claude-opus-4-6"
+      ]
+    },
+    {
+      "setting_prefix": "s60-a15-b30",
+      "budget": {
+        "shared": 60,
+        "adapt": 15,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "60 / 15 / 120"
+      },
+      "values": [
+        0.9129429558934723,
+        0.9225865495571682,
+        0.8768051482600245,
+        0.9041115512368882
+      ],
+      "model_count": 5,
+      "models": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-5",
+        "claude-sonnet-4-6",
+        "claude-opus-4-5",
+        "claude-opus-4-6"
+      ]
+    },
+    {
+      "setting_prefix": "s80-a10-b30",
+      "budget": {
+        "shared": 80,
+        "adapt": 10,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "80 / 10 / 120"
+      },
+      "values": [
+        0.9328720277448014,
+        0.9235146312441685,
+        0.9157459439637362,
+        0.9240442009842352
+      ],
+      "model_count": 5,
+      "models": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-5",
+        "claude-sonnet-4-6",
+        "claude-opus-4-5",
+        "claude-opus-4-6"
+      ]
+    }
+  ],
+  "raw_budgets": [
+    {
+      "setting_prefix": "s20-a25-b30",
+      "budget": {
+        "shared": 20,
+        "adapt": 25,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "20 / 25 / 120"
+      },
+      "model_count": 5,
+      "models": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-5",
+        "claude-sonnet-4-6",
+        "claude-opus-4-5",
+        "claude-opus-4-6"
+      ],
+      "categories": [
+        {
+          "id": "cp_n21",
+          "label": "N = 21"
+        },
+        {
+          "id": "cp_n23",
+          "label": "N = 23"
+        },
+        {
+          "id": "cp_n25",
+          "label": "N = 25"
+        },
+        {
+          "id": "average",
+          "label": "Average"
+        }
+      ],
+      "series": {
+        "shared": [
+          0.92071140928015,
+          0.8139076518891353,
+          0.8127576971032177,
+          0.8491255860908344
+        ],
+        "adapt": [
+          0.7767154883869726,
+          0.6991480011271347,
+          0.7038042556400156,
+          0.7265559150513743
+        ],
+        "baseline": [
+          0.8228563299720797,
+          0.750485254767429,
+          0.716159453585566,
+          0.763167012775025
+        ]
+      },
+      "per_model": {
+        "claude-haiku-4-5": {
+          "shared_mean": 0.8583318352913061,
+          "adapt_mean": 0.7105712391625123,
+          "baseline_mean": 0.7122471547064165,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.8573148572210968,
+              "adapt": 0.7093164904030359,
+              "baseline": 0.7405329952742069
+            },
+            "cp_n23": {
+              "shared": 0.8637952394917363,
+              "adapt": 0.7144492201697944,
+              "baseline": 0.7150018355133543
+            },
+            "cp_n25": {
+              "shared": 0.8538854091610848,
+              "adapt": 0.7079480069147067,
+              "baseline": 0.6812066333316883
+            }
+          },
+          "run_count": 5
+        },
+        "claude-opus-4-5": {
+          "shared_mean": 0.7802354495953592,
+          "adapt_mean": 0.7162118646148857,
+          "baseline_mean": 0.7057658414234853,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9026725247591877,
+              "adapt": 0.8346595776030938,
+              "baseline": 0.8061581542354107
+            },
+            "cp_n23": {
+              "shared": 0.7128463687220258,
+              "adapt": 0.6317784627512174,
+              "baseline": 0.6816987672078673
+            },
+            "cp_n25": {
+              "shared": 0.7251874553048638,
+              "adapt": 0.6821975534903462,
+              "baseline": 0.629440602827178
+            }
+          },
+          "run_count": 5
+        },
+        "claude-opus-4-6": {
+          "shared_mean": 0.9444576724648381,
+          "adapt_mean": 0.6485814871848792,
+          "baseline_mean": 0.8786545036524673,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9296073080569552,
+              "adapt": 0.6793809736139308,
+              "baseline": 0.9553459450822803
+            },
+            "cp_n23": {
+              "shared": 0.9556247416643879,
+              "adapt": 0.6789347012918018,
+              "baseline": 0.8148719884376942
+            },
+            "cp_n25": {
+              "shared": 0.948140967673171,
+              "adapt": 0.5874287866489047,
+              "baseline": 0.8657455774374274
+            }
+          },
+          "run_count": 5
+        },
+        "claude-sonnet-4-5": {
+          "shared_mean": 0.8164126556250014,
+          "adapt_mean": 0.8499868730457288,
+          "baseline_mean": 0.8763390416272705,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9455845039239851,
+              "adapt": 0.9523581948038407,
+              "baseline": 0.9133917125239993
+            },
+            "cp_n23": {
+              "shared": 0.5624068057066423,
+              "adapt": 0.7981258893679801,
+              "baseline": 0.9107358724505661
+            },
+            "cp_n25": {
+              "shared": 0.9412466572443771,
+              "adapt": 0.7994765349653659,
+              "baseline": 0.8048895399072459
+            }
+          },
+          "run_count": 5
+        },
+        "claude-sonnet-4-6": {
+          "shared_mean": 0.8461903174776673,
+          "adapt_mean": 0.7074281112488652,
+          "baseline_mean": 0.642828522465485,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9683778524395258,
+              "adapt": 0.7078622055109618,
+              "baseline": 0.6988528427445015
+            },
+            "cp_n23": {
+              "shared": 0.974865103860884,
+              "adapt": 0.6724517320548797,
+              "baseline": 0.630117810227663
+            },
+            "cp_n25": {
+              "shared": 0.5953279961325919,
+              "adapt": 0.7419703961807544,
+              "baseline": 0.5995149144242903
+            }
+          },
+          "run_count": 5
+        }
+      }
+    },
+    {
+      "setting_prefix": "s40-a20-b30",
+      "budget": {
+        "shared": 40,
+        "adapt": 20,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "40 / 20 / 120"
+      },
+      "model_count": 5,
+      "models": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-5",
+        "claude-sonnet-4-6",
+        "claude-opus-4-5",
+        "claude-opus-4-6"
+      ],
+      "categories": [
+        {
+          "id": "cp_n21",
+          "label": "N = 21"
+        },
+        {
+          "id": "cp_n23",
+          "label": "N = 23"
+        },
+        {
+          "id": "cp_n25",
+          "label": "N = 25"
+        },
+        {
+          "id": "average",
+          "label": "Average"
+        }
+      ],
+      "series": {
+        "shared": [
+          0.9151538207580814,
+          0.9194749364414738,
+          0.8765157364489348,
+          0.9037148312161634
+        ],
+        "adapt": [
+          0.8387182313752085,
+          0.8564866612755596,
+          0.8364573524843607,
+          0.8438874150450429
+        ],
+        "baseline": [
+          0.8969209390163844,
+          0.869855747572515,
+          0.8701107165835174,
+          0.8789624677241388
+        ]
+      },
+      "per_model": {
+        "claude-haiku-4-5": {
+          "shared_mean": 0.8056705314078055,
+          "adapt_mean": 0.7658360593520903,
+          "baseline_mean": 0.8271512784431332,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.7945959743672653,
+              "adapt": 0.7547354813658683,
+              "baseline": 0.8578911196037374
+            },
+            "cp_n23": {
+              "shared": 0.8072211428101903,
+              "adapt": 0.7702609191818629,
+              "baseline": 0.8037748389434108
+            },
+            "cp_n25": {
+              "shared": 0.8151944770459612,
+              "adapt": 0.7725117775085397,
+              "baseline": 0.8197878767822516
+            }
+          },
+          "run_count": 5
+        },
+        "claude-opus-4-5": {
+          "shared_mean": 0.9362164154627204,
+          "adapt_mean": 0.907132742070894,
+          "baseline_mean": 0.8048223990556511,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9321135970174368,
+              "adapt": 0.9350602013712441,
+              "baseline": 0.8593203825232838
+            },
+            "cp_n23": {
+              "shared": 0.9390383429101365,
+              "adapt": 0.8946857232188685,
+              "baseline": 0.7993107521010461
+            },
+            "cp_n25": {
+              "shared": 0.9374973064605874,
+              "adapt": 0.8916523016225695,
+              "baseline": 0.7558360625426236
+            }
+          },
+          "run_count": 5
+        },
+        "claude-opus-4-6": {
+          "shared_mean": 0.8822814333045382,
+          "adapt_mean": 0.886944258552032,
+          "baseline_mean": 0.9447768460758704,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9445634471870379,
+              "adapt": 0.7956081941363498,
+              "baseline": 0.9296694708829204
+            },
+            "cp_n23": {
+              "shared": 0.946087695858264,
+              "adapt": 0.9545615336889519,
+              "baseline": 0.9501202433369877
+            },
+            "cp_n25": {
+              "shared": 0.7561931568683128,
+              "adapt": 0.910663047830794,
+              "baseline": 0.954540824007703
+            }
+          },
+          "run_count": 5
+        },
+        "claude-sonnet-4-5": {
+          "shared_mean": 0.9279141003584147,
+          "adapt_mean": 0.7502988706242452,
+          "baseline_mean": 0.8697189593564115,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9393928057502858,
+              "adapt": 0.7860839105330896,
+              "baseline": 0.8864866192226293
+            },
+            "cp_n23": {
+              "shared": 0.9383508164880036,
+              "adapt": 0.7361118773429076,
+              "baseline": 0.8479346178373856
+            },
+            "cp_n25": {
+              "shared": 0.905998678836955,
+              "adapt": 0.7287008239967383,
+              "baseline": 0.8747356410092196
+            }
+          },
+          "run_count": 5
+        },
+        "claude-sonnet-4-6": {
+          "shared_mean": 0.9664916755473376,
+          "adapt_mean": 0.9092251446259532,
+          "baseline_mean": 0.9483428556896282,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9651032794683807,
+              "adapt": 0.9221033694694908,
+              "baseline": 0.9512371028493505
+            },
+            "cp_n23": {
+              "shared": 0.9666766841407746,
+              "adapt": 0.9268132529452071,
+              "baseline": 0.9481382856437456
+            },
+            "cp_n25": {
+              "shared": 0.9676950630328577,
+              "adapt": 0.8787588114631619,
+              "baseline": 0.9456531785757887
+            }
+          },
+          "run_count": 5
+        }
+      }
+    },
+    {
+      "setting_prefix": "s60-a15-b30",
+      "budget": {
+        "shared": 60,
+        "adapt": 15,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "60 / 15 / 120"
+      },
+      "model_count": 5,
+      "models": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-5",
+        "claude-sonnet-4-6",
+        "claude-opus-4-5",
+        "claude-opus-4-6"
+      ],
+      "categories": [
+        {
+          "id": "cp_n21",
+          "label": "N = 21"
+        },
+        {
+          "id": "cp_n23",
+          "label": "N = 23"
+        },
+        {
+          "id": "cp_n25",
+          "label": "N = 25"
+        },
+        {
+          "id": "average",
+          "label": "Average"
+        }
+      ],
+      "series": {
+        "shared": [
+          0.8969214760481006,
+          0.9000284639027545,
+          0.9022417323500068,
+          0.8997305574336206
+        ],
+        "adapt": [
+          0.9129429558934723,
+          0.9225865495571682,
+          0.8768051482600245,
+          0.9041115512368882
+        ],
+        "baseline": [
+          0.8926481599034315,
+          0.8940174315357211,
+          0.894336865349801,
+          0.8936674855963178
+        ]
+      },
+      "per_model": {
+        "claude-haiku-4-5": {
+          "shared_mean": 0.9095246307605283,
+          "adapt_mean": 0.9165868159881552,
+          "baseline_mean": 0.8505659770212601,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9040477603714434,
+              "adapt": 0.920318536426916,
+              "baseline": 0.8567968384665209
+            },
+            "cp_n23": {
+              "shared": 0.9042774441441903,
+              "adapt": 0.9228596696800271,
+              "baseline": 0.8515830796335058
+            },
+            "cp_n25": {
+              "shared": 0.9202486877659508,
+              "adapt": 0.9065822418575227,
+              "baseline": 0.8433180129637534
+            }
+          },
+          "run_count": 5
+        },
+        "claude-opus-4-5": {
+          "shared_mean": 0.8977826335612249,
+          "adapt_mean": 0.8469999726431645,
+          "baseline_mean": 0.8819535409141702,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.8954546962624634,
+              "adapt": 0.8993250692758823,
+              "baseline": 0.8823800899906524
+            },
+            "cp_n23": {
+              "shared": 0.902210608640765,
+              "adapt": 0.9189755213835517,
+              "baseline": 0.8855282849478033
+            },
+            "cp_n25": {
+              "shared": 0.8956825957804462,
+              "adapt": 0.7226993272700595,
+              "baseline": 0.8779522478040548
+            }
+          },
+          "run_count": 5
+        },
+        "claude-opus-4-6": {
+          "shared_mean": 0.7618468185587137,
+          "adapt_mean": 0.8399623893103669,
+          "baseline_mean": 0.9464510151732839,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.759591586595216,
+              "adapt": 0.8013084207056016,
+              "baseline": 0.9346520312138727
+            },
+            "cp_n23": {
+              "shared": 0.7614015383124446,
+              "adapt": 0.8595254550627665,
+              "baseline": 0.9517680501508025
+            },
+            "cp_n25": {
+              "shared": 0.7645473307684809,
+              "adapt": 0.8590532921627329,
+              "baseline": 0.9529329641551764
+            }
+          },
+          "run_count": 5
+        },
+        "claude-sonnet-4-5": {
+          "shared_mean": 0.9382110715499549,
+          "adapt_mean": 0.9263180733644771,
+          "baseline_mean": 0.8570811646800998,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9343225694866997,
+              "adapt": 0.953570884557322,
+              "baseline": 0.834565086685147
+            },
+            "cp_n23": {
+              "shared": 0.9407430024105989,
+              "adapt": 0.9208421243010074,
+              "baseline": 0.8265151323528066
+            },
+            "cp_n25": {
+              "shared": 0.9395676427525658,
+              "adapt": 0.904541211235102,
+              "baseline": 0.9101632750023457
+            }
+          },
+          "run_count": 5
+        },
+        "claude-sonnet-4-6": {
+          "shared_mean": 0.9912876327376814,
+          "adapt_mean": 0.9906905048782777,
+          "baseline_mean": 0.9322857301927752,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9911907675246802,
+              "adapt": 0.9901918685016398,
+              "baseline": 0.9548467531609639
+            },
+            "cp_n23": {
+              "shared": 0.9915097260057735,
+              "adapt": 0.990729977358488,
+              "baseline": 0.9546926105936873
+            },
+            "cp_n25": {
+              "shared": 0.9911624046825904,
+              "adapt": 0.9911496687747057,
+              "baseline": 0.8873178268236744
+            }
+          },
+          "run_count": 5
+        }
+      }
+    },
+    {
+      "setting_prefix": "s80-a10-b30",
+      "budget": {
+        "shared": 80,
+        "adapt": 10,
+        "baseline": 30,
+        "task_count": 4,
+        "total": 120,
+        "label": "80 / 10 / 120"
+      },
+      "model_count": 5,
+      "models": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-5",
+        "claude-sonnet-4-6",
+        "claude-opus-4-5",
+        "claude-opus-4-6"
+      ],
+      "categories": [
+        {
+          "id": "cp_n21",
+          "label": "N = 21"
+        },
+        {
+          "id": "cp_n23",
+          "label": "N = 23"
+        },
+        {
+          "id": "cp_n25",
+          "label": "N = 25"
+        },
+        {
+          "id": "average",
+          "label": "Average"
+        }
+      ],
+      "series": {
+        "shared": [
+          0.9372487138469715,
+          0.9382724624413441,
+          0.9410330731363402,
+          0.9388514164748853
+        ],
+        "adapt": [
+          0.9328720277448014,
+          0.9235146312441685,
+          0.9157459439637362,
+          0.9240442009842352
+        ],
+        "baseline": [
+          0.8756349606478423,
+          0.859675263655259,
+          0.8061305510239679,
+          0.847146925109023
+        ]
+      },
+      "per_model": {
+        "claude-haiku-4-5": {
+          "shared_mean": 0.8847746590505411,
+          "adapt_mean": 0.8796685043133212,
+          "baseline_mean": 0.7898767319819632,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.8873686332525523,
+              "adapt": 0.887604177792993,
+              "baseline": 0.7937438022578107
+            },
+            "cp_n23": {
+              "shared": 0.885261225588937,
+              "adapt": 0.8701797183131534,
+              "baseline": 0.8090905364549998
+            },
+            "cp_n25": {
+              "shared": 0.8816941183101334,
+              "adapt": 0.8812216168338172,
+              "baseline": 0.766795857233079
+            }
+          },
+          "run_count": 5
+        },
+        "claude-opus-4-5": {
+          "shared_mean": 0.9283278940117894,
+          "adapt_mean": 0.9316057076556383,
+          "baseline_mean": 0.7479544521634713,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9288249388303577,
+              "adapt": 0.9307266035879207,
+              "baseline": 0.8599287248198859
+            },
+            "cp_n23": {
+              "shared": 0.9314499618272635,
+              "adapt": 0.9329055165284872,
+              "baseline": 0.670095138303654
+            },
+            "cp_n25": {
+              "shared": 0.9247087813777467,
+              "adapt": 0.9311850028505072,
+              "baseline": 0.7138394933668744
+            }
+          },
+          "run_count": 5
+        },
+        "claude-opus-4-6": {
+          "shared_mean": 0.956313743876444,
+          "adapt_mean": 0.9095996305018401,
+          "baseline_mean": 0.9315103710699997,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9438877068410966,
+              "adapt": 0.9480338447636083,
+              "baseline": 0.9367711509876735
+            },
+            "cp_n23": {
+              "shared": 0.9653152000401795,
+              "adapt": 0.8656631722021855,
+              "baseline": 0.9546381565331536
+            },
+            "cp_n25": {
+              "shared": 0.9597383247480555,
+              "adapt": 0.9151018745397266,
+              "baseline": 0.9031218056891722
+            }
+          },
+          "run_count": 5
+        },
+        "claude-sonnet-4-5": {
+          "shared_mean": 0.9601584129472949,
+          "adapt_mean": 0.96014267586123,
+          "baseline_mean": 0.8437459330314313,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.956699980463975,
+              "adapt": 0.9722740664939847,
+              "baseline": 0.8851530144957251
+            },
+            "cp_n23": {
+              "shared": 0.9558692671738109,
+              "adapt": 0.9792869175002707,
+              "baseline": 0.9071602109326964
+            },
+            "cp_n25": {
+              "shared": 0.9679059912040989,
+              "adapt": 0.9288670435894344,
+              "baseline": 0.7389245736658724
+            }
+          },
+          "run_count": 5
+        },
+        "claude-sonnet-4-6": {
+          "shared_mean": 0.9646823724883576,
+          "adapt_mean": 0.9392044865891469,
+          "baseline_mean": 0.9226471372982494,
+          "holdouts": {
+            "cp_n21": {
+              "shared": 0.9694623098468765,
+              "adapt": 0.9257214460854997,
+              "baseline": 0.9025781106781166
+            },
+            "cp_n23": {
+              "shared": 0.95346665757653,
+              "adapt": 0.9695378316767458,
+              "baseline": 0.957392276051791
+            },
+            "cp_n25": {
+              "shared": 0.9711181500416665,
+              "adapt": 0.9223541820051955,
+              "baseline": 0.9079710251648413
+            }
+          },
+          "run_count": 5
+        }
+      }
+    }
+  ]
+}

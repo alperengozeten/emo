@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="454" viewBox="0 0 1150 454" role="img" aria-label="EMO-STA subtask gain profile">
+<rect x="0" y="0" width="1150" height="454" fill="white" />
+<rect x="5.5" y="5.5" width="379.0" height="209.0" fill="white" stroke="#dddddd" stroke-width="1" />
+<text x="195.0" y="27.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="600" fill="#1b9e77">Function minimization</text>
+<text x="195.0" y="45.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#555555">mean STA Best-Local improvement +0.058</text>
+<line x1="107.30" y1="59.00" x2="107.30" y2="171.00" stroke="#ececec" stroke-width="1" />
+<text x="107.30" y="189.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">-0.10</text>
+<line x1="194.53" y1="59.00" x2="194.53" y2="171.00" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4" />
+<text x="194.53" y="189.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.00</text>
+<line x1="281.77" y1="59.00" x2="281.77" y2="171.00" stroke="#ececec" stroke-width="1" />
+<text x="281.77" y="189.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.10</text>
+<line x1="369.00" y1="59.00" x2="369.00" y2="171.00" stroke="#ececec" stroke-width="1" />
+<text x="369.00" y="189.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.20</text>
+<text x="99.30" y="77.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">Rastrigin</text>
+<line x1="279.05" y1="73.00" x2="352.71" y2="73.00" stroke="#1b9e77" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="279.05" cy="73.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="352.71" cy="73.00" r="5.6" fill="#1b9e77" stroke="white" stroke-width="1.0" />
+<text x="99.30" y="105.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">Rosenbrock</text>
+<line x1="173.51" y1="101.00" x2="226.76" y2="101.00" stroke="#1b9e77" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="173.51" cy="101.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="226.76" cy="101.00" r="5.6" fill="#1b9e77" stroke="white" stroke-width="1.0" />
+<text x="99.30" y="133.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">Ackley</text>
+<line x1="183.49" y1="129.00" x2="202.26" y2="129.00" stroke="#1b9e77" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="183.49" cy="129.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="202.26" cy="129.00" r="5.6" fill="#1b9e77" stroke="white" stroke-width="1.0" />
+<text x="99.30" y="161.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">Oscillatory Basin</text>
+<line x1="146.58" y1="157.00" x2="199.68" y2="157.00" stroke="#1b9e77" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="146.58" cy="157.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="199.68" cy="157.00" r="5.6" fill="#1b9e77" stroke="white" stroke-width="1.0" />
+<text x="238.15" y="205.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">Improvement vs single-task baseline</text>
+<rect x="385.5" y="5.5" width="379.0" height="209.0" fill="white" stroke="#dddddd" stroke-width="1" />
+<text x="575.0" y="27.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="600" fill="#2f6db5">Circle packing</text>
+<text x="575.0" y="45.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#555555">mean STA Best-Local improvement +0.039</text>
+<line x1="456.00" y1="59.00" x2="456.00" y2="171.00" stroke="#ececec" stroke-width="1" />
+<text x="456.00" y="189.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">-0.05</text>
+<line x1="602.50" y1="59.00" x2="602.50" y2="171.00" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4" />
+<text x="602.50" y="189.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.00</text>
+<line x1="749.00" y1="59.00" x2="749.00" y2="171.00" stroke="#ececec" stroke-width="1" />
+<text x="749.00" y="189.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.05</text>
+<text x="448.00" y="77.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=26</text>
+<line x1="669.46" y1="73.00" x2="737.56" y2="73.00" stroke="#2f6db5" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="669.46" cy="73.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="737.56" cy="73.00" r="5.6" fill="#2f6db5" stroke="white" stroke-width="1.0" />
+<text x="448.00" y="105.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=24</text>
+<line x1="668.71" y1="101.00" x2="734.46" y2="101.00" stroke="#2f6db5" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="668.71" cy="101.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="734.46" cy="101.00" r="5.6" fill="#2f6db5" stroke="white" stroke-width="1.0" />
+<text x="448.00" y="133.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=22</text>
+<line x1="661.10" y1="129.00" x2="725.90" y2="129.00" stroke="#2f6db5" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="661.10" cy="129.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="725.90" cy="129.00" r="5.6" fill="#2f6db5" stroke="white" stroke-width="1.0" />
+<text x="448.00" y="161.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=20</text>
+<line x1="575.91" y1="157.00" x2="671.98" y2="157.00" stroke="#2f6db5" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="575.91" cy="157.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="671.98" cy="157.00" r="5.6" fill="#2f6db5" stroke="white" stroke-width="1.0" />
+<text x="602.50" y="205.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">Improvement vs single-task baseline</text>
+<rect x="765.5" y="5.5" width="379.0" height="209.0" fill="white" stroke="#dddddd" stroke-width="1" />
+<text x="955.0" y="27.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="600" fill="#8c564b">Circle packing rectangles</text>
+<text x="955.0" y="45.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#555555">mean STA Best-Local improvement +0.034</text>
+<line x1="836.00" y1="59.00" x2="836.00" y2="171.00" stroke="#ececec" stroke-width="1" />
+<text x="836.00" y="189.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">-0.05</text>
+<line x1="982.50" y1="59.00" x2="982.50" y2="171.00" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4" />
+<text x="982.50" y="189.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.00</text>
+<line x1="1129.00" y1="59.00" x2="1129.00" y2="171.00" stroke="#ececec" stroke-width="1" />
+<text x="1129.00" y="189.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.05</text>
+<text x="828.00" y="77.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=23</text>
+<line x1="1066.85" y1="73.00" x2="1101.12" y2="73.00" stroke="#8c564b" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="1066.85" cy="73.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="1101.12" cy="73.00" r="5.6" fill="#8c564b" stroke="white" stroke-width="1.0" />
+<text x="828.00" y="105.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=21</text>
+<line x1="1009.61" y1="101.00" x2="1093.38" y2="101.00" stroke="#8c564b" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="1009.61" cy="101.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="1093.38" cy="101.00" r="5.6" fill="#8c564b" stroke="white" stroke-width="1.0" />
+<text x="828.00" y="133.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=22</text>
+<line x1="1015.10" y1="129.00" x2="1066.86" y2="129.00" stroke="#8c564b" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="1015.10" cy="129.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="1066.86" cy="129.00" r="5.6" fill="#8c564b" stroke="white" stroke-width="1.0" />
+<text x="828.00" y="161.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=20</text>
+<line x1="1002.79" y1="157.00" x2="1064.90" y2="157.00" stroke="#8c564b" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="1002.79" cy="157.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="1064.90" cy="157.00" r="5.6" fill="#8c564b" stroke="white" stroke-width="1.0" />
+<text x="982.50" y="205.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">Improvement vs single-task baseline</text>
+<rect x="5.5" y="215.5" width="379.0" height="209.0" fill="white" stroke="#dddddd" stroke-width="1" />
+<text x="195.0" y="237.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="600" fill="#b07aa1">Heilbronn triangle</text>
+<text x="195.0" y="255.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#555555">mean STA Best-Local improvement +0.120</text>
+<line x1="76.00" y1="269.00" x2="76.00" y2="381.00" stroke="#ececec" stroke-width="1" />
+<text x="76.00" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">-0.10</text>
+<line x1="173.67" y1="269.00" x2="173.67" y2="381.00" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4" />
+<text x="173.67" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.00</text>
+<line x1="271.33" y1="269.00" x2="271.33" y2="381.00" stroke="#ececec" stroke-width="1" />
+<text x="271.33" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.10</text>
+<line x1="369.00" y1="269.00" x2="369.00" y2="381.00" stroke="#ececec" stroke-width="1" />
+<text x="369.00" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.20</text>
+<text x="68.00" y="287.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=12</text>
+<line x1="163.33" y1="283.00" x2="321.65" y2="283.00" stroke="#b07aa1" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="163.33" cy="283.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="321.65" cy="283.00" r="5.6" fill="#b07aa1" stroke="white" stroke-width="1.0" />
+<text x="68.00" y="315.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=11</text>
+<line x1="180.96" y1="311.00" x2="308.91" y2="311.00" stroke="#b07aa1" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="180.96" cy="311.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="308.91" cy="311.00" r="5.6" fill="#b07aa1" stroke="white" stroke-width="1.0" />
+<text x="68.00" y="343.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=10</text>
+<line x1="190.79" y1="339.00" x2="274.37" y2="339.00" stroke="#b07aa1" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="190.79" cy="339.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="274.37" cy="339.00" r="5.6" fill="#b07aa1" stroke="white" stroke-width="1.0" />
+<text x="68.00" y="371.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">N=9</text>
+<line x1="141.41" y1="367.00" x2="258.75" y2="367.00" stroke="#b07aa1" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="141.41" cy="367.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="258.75" cy="367.00" r="5.6" fill="#b07aa1" stroke="white" stroke-width="1.0" />
+<text x="222.50" y="415.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">Improvement vs single-task baseline</text>
+<rect x="385.5" y="215.5" width="379.0" height="209.0" fill="white" stroke="#dddddd" stroke-width="1" />
+<text x="575.0" y="237.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="600" fill="#4c78a8">Signal processing</text>
+<text x="575.0" y="255.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#555555">mean STA Best-Local improvement +0.036</text>
+<line x1="456.00" y1="269.00" x2="456.00" y2="381.00" stroke="#ececec" stroke-width="1" />
+<text x="456.00" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">-0.05</text>
+<line x1="553.67" y1="269.00" x2="553.67" y2="381.00" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4" />
+<text x="553.67" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.00</text>
+<line x1="651.33" y1="269.00" x2="651.33" y2="381.00" stroke="#ececec" stroke-width="1" />
+<text x="651.33" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.05</text>
+<line x1="749.00" y1="269.00" x2="749.00" y2="381.00" stroke="#ececec" stroke-width="1" />
+<text x="749.00" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.10</text>
+<text x="448.00" y="287.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">trend+sine</text>
+<line x1="655.70" y1="283.00" x2="701.36" y2="283.00" stroke="#4c78a8" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="655.70" cy="283.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="701.36" cy="283.00" r="5.6" fill="#4c78a8" stroke="white" stroke-width="1.0" />
+<text x="448.00" y="315.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">multi-freq</text>
+<line x1="590.43" y1="311.00" x2="622.92" y2="311.00" stroke="#4c78a8" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="590.43" cy="311.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="622.92" cy="311.00" r="5.6" fill="#4c78a8" stroke="white" stroke-width="1.0" />
+<text x="448.00" y="343.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">chirp</text>
+<line x1="525.76" y1="339.00" x2="592.24" y2="339.00" stroke="#4c78a8" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="525.76" cy="339.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="592.24" cy="339.00" r="5.6" fill="#4c78a8" stroke="white" stroke-width="1.0" />
+<text x="448.00" y="371.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">step</text>
+<line x1="485.63" y1="367.00" x2="578.24" y2="367.00" stroke="#4c78a8" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="485.63" cy="367.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="578.24" cy="367.00" r="5.6" fill="#4c78a8" stroke="white" stroke-width="1.0" />
+<text x="602.50" y="415.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">Improvement vs single-task baseline</text>
+<rect x="765.5" y="215.5" width="379.0" height="209.0" fill="white" stroke="#dddddd" stroke-width="1" />
+<text x="955.0" y="237.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="600" fill="#af7aa1">SLDBench-3D</text>
+<text x="955.0" y="255.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#555555">mean STA Best-Local improvement +0.012</text>
+<line x1="837.90" y1="269.00" x2="837.90" y2="381.00" stroke="#ececec" stroke-width="1" />
+<text x="837.90" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">-0.05</text>
+<line x1="983.45" y1="269.00" x2="983.45" y2="381.00" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4" />
+<text x="983.45" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.00</text>
+<line x1="1129.00" y1="269.00" x2="1129.00" y2="381.00" stroke="#ececec" stroke-width="1" />
+<text x="1129.00" y="399.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" fill="#666666">+0.05</text>
+<text x="829.90" y="301.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">data-constr</text>
+<line x1="992.04" y1="297.00" x2="1052.13" y2="297.00" stroke="#af7aa1" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="992.04" cy="297.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="1052.13" cy="297.00" r="5.6" fill="#af7aa1" stroke="white" stroke-width="1.0" />
+<text x="829.90" y="357.00" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">vocab</text>
+<line x1="933.63" y1="353.00" x2="982.67" y2="353.00" stroke="#af7aa1" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+<circle cx="933.63" cy="353.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<circle cx="982.67" cy="353.00" r="5.6" fill="#af7aa1" stroke="white" stroke-width="1.0" />
+<text x="983.45" y="415.00" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" fill="#333333">Improvement vs single-task baseline</text>
+<circle cx="353.00" cy="441.00" r="5.2" fill="white" stroke="#666666" stroke-width="1.6" />
+<text x="367.00" y="445.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" fill="#333333">STA Best-Shared (Before Adaptation)</text>
+<circle cx="651.00" cy="441.00" r="5.6" fill="#333333" stroke="white" stroke-width="1.0" />
+<text x="665.00" y="445.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" fill="#333333">STA Best-Local</text>
+</svg>
