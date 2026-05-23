@@ -6,6 +6,9 @@ Evolutionary Multi-Task Optimization for LLM-Guided Program Discovery
   <a href="LICENSE">
     <img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg">
   </a>
+  <a href="https://arxiv.org/abs/2605.22613">
+    <img alt="arXiv 2605.22613" src="https://img.shields.io/badge/arXiv-2605.22613-b31b1b.svg">
+  </a>
   <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-blue.svg">
 </p>
 
